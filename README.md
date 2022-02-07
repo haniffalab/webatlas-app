@@ -4,7 +4,6 @@
 [![codecov](https://codecov.io/gh/haniffalab/sci-spatial-web-app/branch/main/graph/badge.svg?token=ZT374N3LC3)](https://codecov.io/gh/haniffalab/sci-spatial-web-app)
 [![react](https://img.shields.io/badge/react-14-blue)](https://reactjs.org)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-![License](https://img.shields.io/github/license/dyarleniber/react-workflow-gh-actions)
 
 ## SINGLE CELL INSIGHTS
 
