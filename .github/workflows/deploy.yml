@@ -34,7 +34,8 @@ jobs:
       run: 'gcloud info'
       
     - name: 'Deploy files'
-      run: gsutil -m rsync -d -c -r public gs://my-gcs-bucket
-      run: gsutil -m setmeta -h "Cache-Control:public, max-age=3600" gs://my-gcs-bucket/**/*.html
-      run: gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://my-gcs-bucket/js/*.js
-      run: gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://my-gcs-bucket/css/*.css
+      run: |
+          gsutil -m rsync -d -c -r public gs://my-gcs-bucket \
+          gsutil -m setmeta -h "Cache-Control:public, max-age=3600" gs://my-gcs-bucket/**/*.html \
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://my-gcs-bucket/js/*.js \
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://my-gcs-bucket/css/*.css
