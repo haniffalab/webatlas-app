@@ -1,6 +1,6 @@
-[![Node.js CI](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/node.js.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/node.js.yml)
+[![tests](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/node.js.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/node.js.yml)
 [![build](https://github.com/haniffalab/sci-adifa/actions/workflows/docker-release.yml/badge.svg)](https://github.com/haniffalab/sci-adifa/actions/workflows/docker-release.yml)
-[![sphinx](https://github.com/haniffalab/sci-adifa/actions/workflows/sphinx-build.yml/badge.svg)](https://github.com/haniffalab/sci-adifa/actions/workflows/sphinx-build.yml)
+[![sphinx](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/sphinx-build.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/sphinx-build.yml)
 [![codecov](https://codecov.io/gh/haniffalab/sci-spatial-web-app/branch/main/graph/badge.svg?token=ZT374N3LC3)](https://codecov.io/gh/haniffalab/sci-spatial-web-app)
 [![react](https://img.shields.io/badge/react-14-blue)](https://reactjs.org)
 
@@ -8,7 +8,7 @@
 
 # Spatial Web App
 
-[![docs](https://img.shields.io/badge/Documentation-online-blue)](https://haniffalab.github.io/sci-adifa)
+[![docs](https://img.shields.io/badge/Documentation-online-blue)](http://haniffalab.com/sci-spatial-web-app/)
 [![doi](https://zenodo.org/badge/DOI/10.5281/zenodo.5824895.svg)](https://doi.org/10.5281/zenodo.5824895)
 
 Adifa is a framework for visualising single-cell gene expression data in a web browser. It is built on [Flask](https://flask.palletsprojects.com/), a micro web framework, and ingests [Annotated Data](https://anndata.readthedocs.io/) objects in the `.h5ad` file format. It includes dimensionality reduction visualisation, heatmaps and dotplots, with the ability to explore gene expression and disease markers. The Python-based implementation and usage of the [deck.gl](https://deck.gl/) framework allows efficient handling of datasets up to one million cells.
