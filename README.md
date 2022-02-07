@@ -1,3 +1,20 @@
+[![Node.js CI](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/node.js.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/node.js.yml)
+[![build](https://github.com/haniffalab/sci-adifa/actions/workflows/docker-release.yml/badge.svg)](https://github.com/haniffalab/sci-adifa/actions/workflows/docker-release.yml)
+[![sphinx](https://github.com/haniffalab/sci-adifa/actions/workflows/sphinx-build.yml/badge.svg)](https://github.com/haniffalab/sci-adifa/actions/workflows/sphinx-build.yml)
+[![codecov](https://codecov.io/gh/haniffalab/sci-spatial-web-app/branch/main/graph/badge.svg?token=ZT374N3LC3)](https://codecov.io/gh/haniffalab/sci-spatial-web-app)
+[![react](https://img.shields.io/badge/react-14-blue)](https://reactjs.org)
+
+## SINGLE CELL INSIGHTS
+
+# Spatial Web App
+
+[![docs](https://img.shields.io/badge/Documentation-online-blue)](https://haniffalab.github.io/sci-adifa)
+[![doi](https://zenodo.org/badge/DOI/10.5281/zenodo.5824895.svg)](https://doi.org/10.5281/zenodo.5824895)
+
+Adifa is a framework for visualising single-cell gene expression data in a web browser. It is built on [Flask](https://flask.palletsprojects.com/), a micro web framework, and ingests [Annotated Data](https://anndata.readthedocs.io/) objects in the `.h5ad` file format. It includes dimensionality reduction visualisation, heatmaps and dotplots, with the ability to explore gene expression and disease markers. The Python-based implementation and usage of the [deck.gl](https://deck.gl/) framework allows efficient handling of datasets up to one million cells.
+
+Discuss usage on [Discourse]. Read the [documentation](https://haniffalab.github.io/sci-adifa). If you’d like to contribute by opening an issue or creating a pull request, please take a look at our [contributing guide](CONTRIBUTING.md). If Adifa is useful for your research, consider [citing the software](https://haniffalab.com/sci-adifa/citing.html). 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
