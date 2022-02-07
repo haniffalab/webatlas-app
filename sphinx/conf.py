@@ -12,12 +12,10 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../adifa'))
-
 
 # -- Project information -----------------------------------------------------
 
-project = 'Adifa'
+project = 'Spatial Web App'
 copyright = '2022, Haniffa Lab'
 author = 'Haniffa Lab'
 
