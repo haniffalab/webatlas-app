@@ -9,7 +9,8 @@
 
 # Spatial Web App
 
-[![docs](https://img.shields.io/badge/Documentation-online-blue)](http://haniffalab.com/sci-spatial-web-app/)
+[![docs](https://img.shields.io/badge/Documentation-read-blue)](http://haniffalab.com/sci-spatial-web-app/)
+[![demo](https://img.shields.io/badge/Demo-open-blue)](https://storage.googleapis.com/spatial-web-app/index.html)
 
 Adifa is a framework for visualising single-cell gene expression data in a web browser. It is built on [Flask](https://flask.palletsprojects.com/), a micro web framework, and ingests [Annotated Data](https://anndata.readthedocs.io/) objects in the `.h5ad` file format. It includes dimensionality reduction visualisation, heatmaps and dotplots, with the ability to explore gene expression and disease markers. The Python-based implementation and usage of the [deck.gl](https://deck.gl/) framework allows efficient handling of datasets up to one million cells.
 
