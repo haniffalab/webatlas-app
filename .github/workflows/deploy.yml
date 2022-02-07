@@ -47,7 +47,7 @@ jobs:
       run: gsutil -m rsync -d -c -r build gs://spatial-web-app
       
     - name: 'Set HTTP cache'
-      run: |
-        gsutil -m setmeta -h "Cache-Control:public, max-age=3600" gs://spatial-web-app/**/*.html \
-        gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://spatial-web-app/js/*.js \
+      run: >
+        gsutil -m setmeta -h "Cache-Control:public, max-age=3600" gs://spatial-web-app/**/*.html
+        gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://spatial-web-app/js/*.js
         gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://spatial-web-app/css/*.css
