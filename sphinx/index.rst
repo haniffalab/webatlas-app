@@ -12,8 +12,6 @@
    :target: hhttps://reactjs.org
 .. |license| image:: https://img.shields.io/badge/license-MIT-green
    :target: https://github.com/haniffalab/sci-spatial-web-app/blob/main/LICENSE
-.. |Demo| image:: https://img.shields.io/badge/Demo-open-blue
-   :target: https://storage.googleapis.com/spatial-web-app/index.html
 
 .. raw:: html
 
@@ -22,11 +20,12 @@
 Spatial Web App
 ===============
 
+.. |demo| image:: https://img.shields.io/badge/Demo-open-blue
+   :target: https://storage.googleapis.com/spatial-web-app/index.html
+
 The Spatial Web App is a ...
 
-Discuss usage on `Discourse`_. Read the `documentation`_. If you’d like to contribute by 
-opening an issue or creating a pull request, please take a look at our `contributing guide`_. 
-If Adifa is useful for your research, consider :ref:`citing the software <citing>`.
+Discuss usage on `Discourse`_. Read the `documentation`_.
 
 .. _Discourse: https://discourse.group/
 .. _documentation: https://haniffalab.github.io/sci-adifa
