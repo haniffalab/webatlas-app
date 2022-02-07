@@ -1,4 +1,4 @@
-[![tests](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/ci.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/ci.yml)
+[![tests](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/tests.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/tests.yml)
 [![deploy](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/deploy.yml)
 [![sphinx](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/sphinx.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/sphinx.yml)
 [![codecov](https://codecov.io/gh/haniffalab/sci-spatial-web-app/branch/main/graph/badge.svg?token=ZT374N3LC3)](https://codecov.io/gh/haniffalab/sci-spatial-web-app)
