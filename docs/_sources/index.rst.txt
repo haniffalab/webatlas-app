@@ -1,29 +1,28 @@
-|Tests| |Sphinx| |Coverage| |Python| |DOI|
+|tests| |deploy| |sphinx| |codecov| |react| |license| |demo|
  
-.. |Tests| image:: https://github.com/haniffalab/sci-adifa/actions/workflows/test-coverage.yml/badge.svg
-   :target: https://github.com/haniffalab/sci-adifa/actions/workflows/test-coverage.yml
-.. |Sphinx| image:: https://github.com/haniffalab/sci-adifa/actions/workflows/sphinx-build.yml/badge.svg
-   :target: https://github.com/haniffalab/sci-adifa/actions/workflows/sphinx-build.yml
-.. |Coverage| image:: https://codecov.io/gh/haniffalab/sci-adifa/branch/main/graph/badge.svg?token=SM1J6FVZ5C
-   :target: https://codecov.io/gh/haniffalab/sci-adifa
-.. |Python| image:: https://img.shields.io/badge/python-3.8-blue
-   :target: https://python.org
-.. |DOI| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5824895.svg
-   :target: https://doi.org/10.5281/zenodo.5824895
+.. |tests| image:: https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/tests.yml/badge.svg
+   :target: https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/tests.yml
+.. |deploy| image:: https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/deploy.yml/badge.svg
+   :target: https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/deploy.yml
+.. |sphinx| image:: https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/sphinx.yml/badge.svg
+   :target: https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/sphinx.yml
+.. |codecov| image:: https://codecov.io/gh/haniffalab/sci-spatial-web-app/branch/main/graph/badge.svg?token=ZT374N3LC3
+   :target: https://codecov.io/gh/haniffalab/sci-spatial-web-app
+.. |react| image:: https://img.shields.io/badge/react-14-blue
+   :target: hhttps://reactjs.org
+.. |license| image:: https://img.shields.io/badge/license-MIT-green
+   :target: https://github.com/haniffalab/sci-spatial-web-app/blob/main/LICENSE
+.. |Demo| image:: https://img.shields.io/badge/Demo-open-blue
+   :target: https://storage.googleapis.com/spatial-web-app/index.html
 
 .. raw:: html
 
     <h2>SINGLE CELL INSIGHTS</h2>
 
-Adifa - Annotated Data in Flask App
-===================================
+Spatial Web App
+===============
 
-Adifa is a framework for visualising single-cell gene expression data in a web browser. 
-It is built on `Flask`_, a micro web framework, and ingests `Annotated Data`_ objects 
-in the `.h5ad` file format. It includes dimensionality reduction visualisation, heatmaps 
-and dotplots, with the ability to explore gene expression and disease markers. The Python-
-based implementation and usage of the `deck.gl`_ framework allows efficient handling of 
-datasets up to one million cells.
+The Spatial Web App is a ...
 
 Discuss usage on `Discourse`_. Read the `documentation`_. If you’d like to contribute by 
 opening an issue or creating a pull request, please take a look at our `contributing guide`_. 
@@ -60,7 +59,7 @@ Search
    :hidden:
    :caption: Project Links
   
-   Source Code <https://github.com/haniffalab/adifa>
-   Issue Tracker <https://github.com/haniffalab/adifa/issues>
+   Source Code <https://github.com/haniffalab/sci-spatial-web-app/>
+   Issue Tracker <https://github.com/haniffalab/sci-spatial-web-app/issues>
    Website <https://haniffalab.com/>
    Twitter <https://twitter.com/haniffalab>
