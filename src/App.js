@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import { Vitessce } from "vitessce/dist/umd/production/index.min.js";
