@@ -6,7 +6,14 @@ import "vitessce/dist/umd/production/static/css/index.css";
 
 function App() {
   return (
-    <Vitessce config={ViewConfig} height={1000} theme="dark" />
+    <div className="App">
+      <header className="App-header">
+        <p>
+          Spatial Web App
+        </p>
+      </header>
+      <Vitessce config={ViewConfig} height={1000} theme="dark" />
+    </div>
   );
 }
 
