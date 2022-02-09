@@ -1,3 +1,5 @@
+import { useRef, useLayoutEffect, useState } from "react";
+
 import './App.css';
 
 import { Vitessce } from "vitessce/dist/umd/production/index.min.js";
@@ -5,6 +7,18 @@ import ViewConfig from "./vitessceConfig.json";
 import "vitessce/dist/umd/production/static/css/index.css";
 
 function App() {
+  const targetRef = useRef();
+  const [dimensions, setDimensions] = useState({ width:0, height: 0 });
+
+  useLayoutEffect(() => {
+    if (targetRef.current) {
+      setDimensions({
+        width: targetRef.current.offsetWidth,
+        height: targetRef.current.offsetHeight
+      });
+    }
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,7 +26,9 @@ function App() {
           Spatial Web App
         </p>
       </header>
-      <Vitessce config={ViewConfig} height={1000} theme="dark" />
+      <div ref={targetRef} style={{height:'calc(100vh - 100px)'}}>
+        <Vitessce config={ViewConfig} height={dimensions.height} theme="dark" />
+      </div>
     </div>
   );
 }
