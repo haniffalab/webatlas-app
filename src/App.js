@@ -1,10 +1,53 @@
-import { useRef, useLayoutEffect, useState } from "react";
+import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
+import Warning from './Warning';
+import Viewer from './Viewer';
+import DemoConfig from "./config/demo.json";
 
 import './App.css';
 
-import { Vitessce } from "vitessce/dist/umd/production/index.min.js";
-import ViewConfig from "./vitessceConfig.json";
-import "vitessce/dist/umd/production/static/css/index.css";
+function checkResponse(response, theme, debug) {
+  if (!response.ok) {
+    return Promise.resolve(
+      () => (
+        <Warning
+          title="Fetch response not OK"
+        />
+      ),
+    );
+  }
+  return response.text().then((text) => {
+    try {
+      const config = JSON.parse(text);
+      return Promise.resolve(() => (
+        <Viewer
+          config={config}
+        />
+      ));
+    } catch (e) {
+      return Promise.resolve(() => (
+        <Warning
+          title="Error parsing JSON"
+        />
+      ));
+    }
+  });
+}
+
+function AwaitResponse(props) {
+  const {
+    response,
+    theme,
+  } = props;
+  const [isLoading, setIsLoading] = useState(true);
+  const responseRef = useRef();
+  useEffect(() => {
+    response.then((c) => {
+      responseRef.current = c;
+      setIsLoading(false);
+    });
+  }, [response]);
+  return (!isLoading ? React.createElement(responseRef.current) : <Warning title="Loading..." />);
+}
 
 function App() {
   const targetRef = useRef();
@@ -19,17 +62,26 @@ function App() {
     }
   }, []);
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const configUrl = urlParams.get('config');
+
+  if (configUrl) {
+    const responsePromise = fetch(configUrl)
+      .then(response => checkResponse(response))
+      .catch(error => Promise.resolve(() => (
+        <Warning
+          title="Error fetching"
+        />
+      )));
+    return (
+      <AwaitResponse response={responsePromise} />
+    );
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Spatial Web App
-        </p>
-      </header>
-      <div ref={targetRef} style={{height:'calc(100vh - 100px)'}}>
-        <Vitessce config={ViewConfig} height={dimensions.height} theme="dark" />
-      </div>
-    </div>
+    <Viewer
+      config={DemoConfig}
+    />
   );
 }
 
