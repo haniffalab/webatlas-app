@@ -2,7 +2,7 @@
 [![deploy](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/deploy.yml)
 [![sphinx](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/sphinx.yml/badge.svg)](https://github.com/haniffalab/sci-spatial-web-app/actions/workflows/sphinx.yml)
 [![codecov](https://codecov.io/gh/haniffalab/sci-spatial-web-app/branch/main/graph/badge.svg?token=ZT374N3LC3)](https://codecov.io/gh/haniffalab/sci-spatial-web-app)
-[![react](https://img.shields.io/badge/react-14-blue)](https://reactjs.org)
+[![react](https://img.shields.io/badge/react-16-blue)](https://reactjs.org)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ## SINGLE CELL INSIGHTS
