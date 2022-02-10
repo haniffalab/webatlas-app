@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Warning from './Warning';
 import Viewer from './Viewer';
 import DemoConfig from "./config/demo.json";
 
 import './App.css';
 
-function checkResponse(response, theme, debug) {
+function checkResponse(response) {
   if (!response.ok) {
     return Promise.resolve(
       () => (
@@ -36,7 +36,6 @@ function checkResponse(response, theme, debug) {
 function AwaitResponse(props) {
   const {
     response,
-    theme,
   } = props;
   const [isLoading, setIsLoading] = useState(true);
   const responseRef = useRef();
@@ -50,18 +49,6 @@ function AwaitResponse(props) {
 }
 
 function App() {
-  const targetRef = useRef();
-  const [dimensions, setDimensions] = useState({ width:0, height: 0 });
-
-  useLayoutEffect(() => {
-    if (targetRef.current) {
-      setDimensions({
-        width: targetRef.current.offsetWidth,
-        height: targetRef.current.offsetHeight
-      });
-    }
-  }, []);
-
   const urlParams = new URLSearchParams(window.location.search);
   const configUrl = urlParams.get('config');
 

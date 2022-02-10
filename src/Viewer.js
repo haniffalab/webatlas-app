@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import { Vitessce } from "vitessce/dist/umd/production/index.min.js";
 import "vitessce/dist/umd/production/static/css/index.css";
 
@@ -6,7 +6,6 @@ export default function Viewer(props) {
   const {
     config
   } = props;
-
   const targetRef = useRef();
   const [dimensions, setDimensions] = useState({ width:0, height: 0 });
 
