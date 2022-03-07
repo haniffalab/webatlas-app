@@ -10,8 +10,9 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "5.0.0",
-    "vitessce": "^1.1.17",
-    "web-vitals": "^2.1.4"
+    "vitessce": "^1.1.18",
+    "web-vitals": "^2.1.4",
+    "zarr": "^0.5.1"
   },
   "scripts": {
     "start": "react-scripts --max_old_space_size=4096 start",
