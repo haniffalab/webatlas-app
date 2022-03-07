@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Warning from './Warning';
 import Viewer from './Viewer';
-import DemoConfig from "./config/demo.json";
+import DemoConfig from "./config/iss-human-brain-simple.json";
 
 import './App.css';
 
