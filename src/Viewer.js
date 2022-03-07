@@ -25,7 +25,7 @@ export default function Viewer(props) {
           Spatial Web App
         </p>
       </header>
-      <div ref={targetRef} style={{height:'calc(100vh - 100px)'}}>
+      <div ref={targetRef} style={{height:'calc(100vh - 116px)'}}>
         <Vitessce config={config} height={dimensions.height} theme="dark" />
       </div>
     </div>
