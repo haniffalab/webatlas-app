@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Warning from './Warning';
 import Viewer from './Viewer';
-import DemoConfig from "./config/iss-human-brain-simple.json";
+import { getConfig } from './Config';
 
 import './App.css';
 
@@ -50,26 +50,29 @@ function AwaitResponse(props) {
 
 function App() {
   const urlParams = new URLSearchParams(window.location.search);
-  const configUrl = urlParams.get('config');
+  let configUrl = urlParams.get('config');
 
-  if (configUrl) {
-    const responsePromise = fetch(configUrl)
-      .then(response => checkResponse(response))
-      .catch(error => Promise.resolve(() => (
-        <Warning
-          title="Error fetching"
-        />
-      )));
+  configUrl = configUrl ? configUrl : "iss-human-brain-simple"
+
+  const config = getConfig(configUrl)
+  if(config){
     return (
-      <AwaitResponse response={responsePromise} />
+      <Viewer
+        config={config}
+      />
     );
   }
-  
+  const responsePromise = fetch(configUrl)
+    .then(response => checkResponse(response))
+    .catch(error => Promise.resolve(() => (
+      <Warning
+        title="Error fetching"
+      />
+    )));
   return (
-    <Viewer
-      config={DemoConfig}
-    />
+    <AwaitResponse response={responsePromise} />
   );
+
 }
 
 export default App;

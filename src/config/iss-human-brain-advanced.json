@@ -5,9 +5,9 @@
   "public": true,
   "datasets": [
     {
-      "uid": "iss-human-brain-simple",
-      "name": "iss-human-brain-simple",
-      "description": "In-situ Sequencing Mouse Brain Sample (14968 cells). Raster cell segmentation [bioformats2raw v0.2.6], with additional Vitessce components",
+      "uid": "iss-human-brain-advanced",
+      "name": "iss-human-brain-advanced",
+      "description": "In-situ Sequencing Human Brain Sample. Raster cell segmentation [bioformats2raw v0.2.6], with additional Vitessce components",
       "files": [
         {
           "type": "raster",
@@ -60,6 +60,11 @@
                 "type": "zarr",
                 "metadata": {
                   "dimensions": [
+                    {
+                      "field": "t",
+                      "type": "quantitative",
+                      "values": null
+                    },
                     {
                       "field": "channel",
                       "type": "nominal",
@@ -122,27 +127,136 @@
                   }
                 }
               }
-            ]
+              ]
+            }
+          },
+          {
+            "url": "https://storage.googleapis.com/webatlas-vitessce-data/scale_test/3/sample.cells.json",
+            "type": "cells",
+            "fileType": "cells.json"
+          },
+          {
+            "url": "https://storage.googleapis.com/webatlas-vitessce-data/scale_test/3/sample.cell-sets.json",
+            "type": "cell-sets",
+            "fileType": "cell-sets.json"
+          },
+          {
+            "url": "https://storage.googleapis.com/webatlas-vitessce-data/scale_test/3/sample.clusters.json",
+            "type": "expression-matrix",
+            "fileType": "clusters.json"
           }
-        }        
-      ]
-    }
-  ],
-  "initStrategy": "auto",
-  "layout": [
-    {
-      "component": "spatial",
-      "x": 0,
-      "y": 0,
-      "w": 9,
-      "h": 6
+        ]
+      }
+    ],
+    "initStrategy": "auto",
+    "coordinationSpace": {
+      "embeddingType": {
+        "PCA": "X_pca",
+        "UMAP": "X_umap"
+      },
+      "embeddingZoom": {
+        "PCA": 0,
+        "UMAP": 0.75
+      },
+      "spatialZoom": {
+        "A": -5.5
+      },
+      "spatialTargetX": {
+        "A": 16000
+      },
+      "spatialTargetY": {
+        "A": 20000
+      }
     },
-    {
-      "component": "layerController",
-      "x": 9,
-      "y": 0,
-      "w": 3,
-      "h": 6
-    }
-  ]
-}
+    "layout": [
+        {
+          "component": "description",
+          "x": 0,
+          "y": 0,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "component": "layerController",
+          "x": 0,
+          "y": 2,
+          "w": 2,
+          "h": 8
+        },
+        {
+          "component": "status",
+          "x": 0,
+          "y": 9,
+          "w": 2,
+          "h": 2
+        },
+        {
+          "component": "spatial",
+          "x": 2,
+          "y": 0,
+          "w": 4,
+          "h": 8
+        },
+        {
+          "component": "scatterplot",
+          "x": 6,
+          "y": 0,
+          "w": 3,
+          "h": 4,
+          "coordinationScopes":{
+            "embeddingType": "PCA",
+            "embeddingZoom": "PCA"
+          }
+        },
+        {
+          "component": "scatterplot",
+          "x": 6,
+          "y": 4,
+          "w": 3,
+          "h": 4,
+          "coordinationScopes":{
+            "embeddingType": "UMAP",
+            "embeddingZoom": "UMAP"
+          }
+        },
+        {
+          "component": "genes",
+          "x": 9,
+          "y": 0,
+          "w": 3,
+          "h": 4
+        },
+        {
+          "component": "cellSets",
+          "x": 9,
+          "y": 4,
+          "w": 3,
+          "h": 4
+        },
+        {
+          "component": "heatmap",
+          "x": 2,
+          "y": 8,
+          "w": 5,
+          "h": 4,
+          "props": {
+            "transpose": true
+          }
+        },
+        {
+          "component": "cellSetExpression",
+          "x": 7,
+          "y": 8,
+          "w": 3,
+          "h": 4
+        },
+        {
+          "component": "expressionHistogram",
+          "x": 10,
+          "y": 8,
+          "w": 2,
+          "h": 4
+        }
+    ]
+  }
+  

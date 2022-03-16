@@ -7,7 +7,7 @@
     {
       "uid": "iss-human-brain-simple",
       "name": "iss-human-brain-simple",
-      "description": "In-situ Sequencing Mouse Brain Sample (14968 cells). Raster cell segmentation [bioformats2raw v0.2.6], with additional Vitessce components",
+      "description": "In-situ Sequencing Human Brain Sample. Raster cell segmentation [bioformats2raw v0.2.6], with additional Vitessce components",
       "files": [
         {
           "type": "raster",
