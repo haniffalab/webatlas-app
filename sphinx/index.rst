@@ -25,8 +25,6 @@ Spatial Web App
 
 The Spatial Web App is a ...
 
-Discuss usage on `Discourse`_. Read the `documentation`_.
-
 .. _Discourse: https://discourse.group/
 .. _documentation: https://haniffalab.github.io/sci-adifa
 .. _contributing guide: https://github.com/haniffalab/sci-adifa/blob/master/CONTRIBUTING.md
@@ -44,14 +42,6 @@ Discuss usage on `Discourse`_. Read the `documentation`_.
    configuration
    deployment
    pipelines
-   citing
-   modules
-   
-Search
-------
-
-* :ref:`modindex`
-* :ref:`search`
 
 .. toctree::
    :maxdepth: 2
