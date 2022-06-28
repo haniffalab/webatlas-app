@@ -5,9 +5,9 @@ Installation
 Prerequisites
 -------------
 
-Before you begin using Adifa, make sure you have installed the following libraries:
+Before you begin using this application, make sure you have installed the following libraries:
 
-- Python (>=3.8)
+- Node (>=14)
 
 
 Install
@@ -20,51 +20,43 @@ default Git version is the main branch.
 ::
 
     # clone the repository
-    $ git clone git@github.com:haniffalab/sci-adifa.git
-    $ cd sci-adifa
+    $ git clone git@github.com:haniffalab/sci-spatial-web-app.git
+    $ cd sci-spatial-web-app
 
-Create a virtualenv and activate it
-
-::
-
-    $ python -m venv venv
-    $ . venv/bin/activate
-
-Or on Windows cmd
+Install the application
 
 ::
 
-    $ python -m venv venv
-    $ venv\Scripts\activate.bat
-
-Install Adifa and the requirements
-
-::
-
-    $ pip install -e .
-    $ pip install -r requirements.txt
+    $ npm install
 
 
 Run
 ---
 
+### `npm start`
+
 ::
 
-    $ export FLASK_APP=adifa
-    $ export FLASK_ENV=development
-    $ flask init-db
-    $ flask autodiscover
-    $ flask run
+    $ npm start
+    
+Runs the app in the development mode.\
+Open [http://localhost:3000/spatial-web-app](http://localhost:3000/spatial-web-app) to view it in your browser.
 
-Or on Windows cmd::
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-    > set FLASK_APP=adifa
-    > set FLASK_ENV=development
-    > flask init-db
-    $ flask autodiscover
-    > flask run
+### `npm run build`
 
-Open http://127.0.0.1:5000 in a browser.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+
+
 
 
 Test
@@ -72,15 +64,13 @@ Test
 
 ::
 
-    $ pip install '.[test]'
-    $ pip install pytest coverage
-    $ pytest
+    $ npm test
+
+Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 Run with coverage report::
 
-    $ coverage run -m pytest
-    $ coverage report
-    $ coverage html  # open htmlcov/index.html in a browser
+    $ npm test -- --coverage
 
 
 # Getting Started with Create React App

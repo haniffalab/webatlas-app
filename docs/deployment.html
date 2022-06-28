@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -53,8 +54,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
 <ul>
@@ -89,25 +88,25 @@
            <div itemprop="articleBody">
              
   <section id="deployment">
-<h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline"></a></h1>
+<h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this heading"></a></h1>
 <section id="docker">
-<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this headline"></a></h2>
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this heading"></a></h2>
 <section id="build">
-<h3>build<a class="headerlink" href="#build" title="Permalink to this headline"></a></h3>
+<h3>build<a class="headerlink" href="#build" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">build</span> <span class="o">-</span><span class="n">t</span> <span class="n">davehorsfall</span><span class="o">/</span><span class="n">cellatlas</span><span class="o">-</span><span class="n">api</span><span class="p">:</span><span class="n">latest</span> <span class="o">.</span>
 <span class="n">docker</span> <span class="n">push</span> <span class="n">davehorsfall</span><span class="o">/</span><span class="n">cellatlas</span><span class="o">-</span><span class="n">api</span><span class="p">:</span><span class="n">latest</span>
 </pre></div>
 </div>
 </section>
 <section id="run">
-<h3>run<a class="headerlink" href="#run" title="Permalink to this headline"></a></h3>
+<h3>run<a class="headerlink" href="#run" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">haniffalab</span><span class="o">/</span><span class="n">adifa</span><span class="p">:</span><span class="n">latest</span>
 <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5000</span><span class="p">:</span><span class="mi">5000</span> <span class="n">haniffalab</span><span class="o">/</span><span class="n">adifa</span><span class="p">:</span><span class="n">latest</span>
 </pre></div>
 </div>
 </section>
 <section id="compose">
-<h3>compose<a class="headerlink" href="#compose" title="Permalink to this headline"></a></h3>
+<h3>compose<a class="headerlink" href="#compose" title="Permalink to this heading"></a></h3>
 <p>This is then the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> so we see it.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span>
 <span class="n">services</span><span class="p">:</span>
@@ -137,7 +136,7 @@
 </section>
 </section>
 <section id="nginx">
-<h2>Nginx<a class="headerlink" href="#nginx" title="Permalink to this headline"></a></h2>
+<h2>Nginx<a class="headerlink" href="#nginx" title="Permalink to this heading"></a></h2>
 <p>This is then the <code class="docutils literal notranslate"><span class="pre">conf.conf</span></code> so we see it.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span>
 <span class="n">services</span><span class="p">:</span>

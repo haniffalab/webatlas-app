@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -57,8 +58,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
 <ul>
@@ -93,10 +92,10 @@
            <div itemprop="articleBody">
              
   <section id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h1>
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
 <p>Applications need some kind of configuration to toggle settings and define other such environment-specific things. Adifa handles the config like other Flask applications, with the <a class="reference external" href="https://flask.palletsprojects.com/en/2.0.x/config/">Config</a> class.</p>
 <section id="default-configuration">
-<h2>Default Configuration<a class="headerlink" href="#default-configuration" title="Permalink to this headline"></a></h2>
+<h2>Default Configuration<a class="headerlink" href="#default-configuration" title="Permalink to this heading"></a></h2>
 <p>The default configuration for Adifa is defined in the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file in the <a class="reference external" href="https://github.com/haniffalab/sci-adifa/blob/main/.env">repository root</a>, and contains the following values.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;best-password-here&#39;</span>
 <span class="n">SQLALCHEMY_DATABASE_URI</span> <span class="o">=</span> <span class="s1">&#39;sqlite:///../instance/adifa.sqlite&#39;</span>
@@ -109,19 +108,19 @@
 </div>
 </section>
 <section id="overriding-the-configuration">
-<h2>Overriding the Configuration<a class="headerlink" href="#overriding-the-configuration" title="Permalink to this headline"></a></h2>
+<h2>Overriding the Configuration<a class="headerlink" href="#overriding-the-configuration" title="Permalink to this heading"></a></h2>
 <p>To override the deafult configuration you can either:</p>
 <ul class="simple">
 <li><p>use system environment variables (recommended for production)</p></li>
 <li><p>creating a file called <code class="docutils literal notranslate"><span class="pre">config.py</span></code> in your <code class="docutils literal notranslate"><span class="pre">instance</span></code> folder (recommended for development)</p></li>
 </ul>
 <section id="using-environment-variables">
-<h3>Using environment variables<a class="headerlink" href="#using-environment-variables" title="Permalink to this headline"></a></h3>
+<h3>Using environment variables<a class="headerlink" href="#using-environment-variables" title="Permalink to this heading"></a></h3>
 <p>To override indivisual values in the configuration pass or create a new system environment variable with the same name as the configuration value,
 and assign it the value that is needed.</p>
 </section>
 <section id="using-config-py">
-<h3>Using config.py<a class="headerlink" href="#using-config-py" title="Permalink to this headline"></a></h3>
+<h3>Using config.py<a class="headerlink" href="#using-config-py" title="Permalink to this heading"></a></h3>
 <p>The instance folder was introduced in Flask 0.8, and is designed to not be under version control and be deployment specific. It’s the perfect place
 to drop things that either change at runtime or configuration files. To override the configuration, create a new file called <code class="docutils literal notranslate"><span class="pre">config.py</span></code> in your
 <code class="docutils literal notranslate"><span class="pre">instance</span></code> folder. This file will not be placed under version control. Copy the contents from <code class="docutils literal notranslate"><span class="pre">.env</span></code> into your new <code class="docutils literal notranslate"><span class="pre">config.py</span></code>, and update the
@@ -129,12 +128,12 @@ values as needed.</p>
 </section>
 </section>
 <section id="loading-new-datasets">
-<h2>Loading new datasets<a class="headerlink" href="#loading-new-datasets" title="Permalink to this headline"></a></h2>
+<h2>Loading new datasets<a class="headerlink" href="#loading-new-datasets" title="Permalink to this heading"></a></h2>
 <section id="data-folder">
-<h3>Data folder<a class="headerlink" href="#data-folder" title="Permalink to this headline"></a></h3>
+<h3>Data folder<a class="headerlink" href="#data-folder" title="Permalink to this heading"></a></h3>
 </section>
 <section id="autodiscovery">
-<h3>Autodiscovery<a class="headerlink" href="#autodiscovery" title="Permalink to this headline"></a></h3>
+<h3>Autodiscovery<a class="headerlink" href="#autodiscovery" title="Permalink to this heading"></a></h3>
 </section>
 </section>
 </section>
