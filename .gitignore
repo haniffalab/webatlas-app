@@ -24,3 +24,4 @@ yarn-error.log*
 
 # python
 venv
+sphinx/_build
