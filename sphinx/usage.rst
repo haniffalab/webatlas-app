@@ -1,5 +1,5 @@
-Configuration
-=============
+Usage
+=====
 
 Applications need some kind of configuration to toggle settings and define other such environment-specific things. Adifa handles the config like other Flask applications, with the `Config`_ class.
 
