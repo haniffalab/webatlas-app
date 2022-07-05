@@ -4,6 +4,6 @@ import App from './App';
 test('renders learn react link', () => {
   window.URL.createObjectURL = jest.fn();
   render(<App />);
-  const linkElement = screen.getByText(/spatial web app/i)
+  const linkElement = screen.getByText(/vitessce-app/i)
   expect(linkElement).toBeInTheDocument();
 });
