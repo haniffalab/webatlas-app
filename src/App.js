@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Warning from './Warning';
 import Viewer from './Viewer';
-import { getConfig } from './Config';
+import { validateConfig } from './Config';
 
 import './App.css';
 
@@ -50,19 +50,9 @@ function AwaitResponse(props) {
 
 function App() {
   const urlParams = new URLSearchParams(window.location.search);
-  let configUrl = urlParams.get('config');
-
-  configUrl = configUrl ? configUrl : "iss-human-brain-simple"
-
-  const config = getConfig(configUrl)
-  if(config){
-    return (
-      <Viewer
-        config={config}
-      />
-    );
-  }
-  const responsePromise = fetch(configUrl)
+  const configUrl = urlParams.get('config');
+  const config = validateConfig(configUrl)
+  const responsePromise = fetch(config)
     .then(response => checkResponse(response))
     .catch(error => Promise.resolve(() => (
       <Warning

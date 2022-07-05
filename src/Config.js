@@ -1,36 +1,13 @@
-function isValidURL(config) {
+const isValidURL = (config) => {
     // cheapest URL validation I could think of
-    var pattern = new RegExp('^(https?:\\/\\/)(.*?).json$','i'); 
+    var pattern = new RegExp('^(https?:\\/\\/)(.*?).json$', 'i');
     return !!pattern.test(config);
-}
+};
 
-async function loadConfigFromURL(configURL) {
-    let response = await fetch(configURL)
-    let configJSON = await response.json();
-    return configJSON;
-}
-
-function loadConfigFromLocal(configName) {
-    // don't try to `../../file.js` me, boy!
-    configName = configName.replace(/^.*[/]/, ''); 
-    return require(`./config/${configName}.json`)
-}
-
-export function getConfig(config) {
-    var configJSON = {};
-    try {
-        if (isValidURL(config)) {
-            configJSON = loadConfigFromURL(config);
-        } else {
-            configJSON = loadConfigFromLocal(config);
-        }
-        if (!config.version) {
-            // add version property if it's missing
-            config.version = "X.Y.Z";
-        }
-        return configJSON;
+export function validateConfig(url) {
+    if (isValidURL(url)) {
+        return url;
     }
-    catch(error){
-        return null
-    }
+
+    return window.location.protocol + '//' + window.location.host + window.location.pathname + '/config/iss-human-brain-advanced.json';
 }
