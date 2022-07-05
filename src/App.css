@@ -1,14 +1,9 @@
-.App {
-  text-align: center;
+.App {}
+
+.vitessce-container.vitessce-theme-dark .bg-primary {
+  background-color: #222 !important;
 }
 
-.App-header {
-  background-color: #333;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.vitessce-container.vitessce-theme-dark .bg-secondary {
+  background-color: #000 !important;
 }

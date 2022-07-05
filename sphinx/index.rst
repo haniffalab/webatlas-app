@@ -37,11 +37,9 @@ The Spatial Web App is a ...
    :caption: Documentation
    :glob:
 
-   overview
    installation
-   configuration
+   usage
    deployment
-   pipelines
 
 .. toctree::
    :maxdepth: 2
