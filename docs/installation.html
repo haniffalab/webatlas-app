@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -50,8 +51,6 @@
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
 <ul>
@@ -86,70 +85,50 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h2>
-<p>Before you begin using Adifa, make sure you have installed the following libraries:</p>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<p>Before you begin using this application, make sure you have installed the following libraries:</p>
 <ul class="simple">
-<li><p>Python (&gt;=3.8)</p></li>
+<li><p>Node (&gt;=14)</p></li>
 </ul>
 </section>
 <section id="install">
-<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline"></a></h2>
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading"></a></h2>
 <p><strong>Be sure to use the same version of the code as the version of the docs
 you’re reading.</strong> You probably want the latest tagged version, but the
 default Git version is the main branch.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># clone the repository
-$ git clone git@github.com:haniffalab/sci-adifa.git
-$ cd sci-adifa
+$ git clone git@github.com:haniffalab/sci-spatial-web-app.git
+$ cd sci-spatial-web-app
 </pre></div>
 </div>
-<p>Create a virtualenv and activate it</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m venv venv
-$ . venv/bin/activate
-</pre></div>
-</div>
-<p>Or on Windows cmd</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m venv venv
-$ venv\Scripts\activate.bat
-</pre></div>
-</div>
-<p>Install Adifa and the requirements</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install -e .
-$ pip install -r requirements.txt
+<p>Install the application</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ npm install
 </pre></div>
 </div>
 </section>
 <section id="run">
-<h2>Run<a class="headerlink" href="#run" title="Permalink to this headline"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export FLASK_APP=adifa
-$ export FLASK_ENV=development
-$ flask init-db
-$ flask autodiscover
-$ flask run
+<h2>Run<a class="headerlink" href="#run" title="Permalink to this heading"></a></h2>
+<p>### <cite>npm start</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ npm start
 </pre></div>
 </div>
-<p>Or on Windows cmd:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; set FLASK_APP=adifa
-&gt; set FLASK_ENV=development
-&gt; flask init-db
-$ flask autodiscover
-&gt; flask run
-</pre></div>
-</div>
-<p>Open <a class="reference external" href="http://127.0.0.1:5000">http://127.0.0.1:5000</a> in a browser.</p>
+<p>Runs the app in the development mode.Open [<a class="reference external" href="http://localhost:3000/spatial-web-app](http://localhost:3000/spatial-web-app">http://localhost:3000/spatial-web-app](http://localhost:3000/spatial-web-app</a>) to view it in your browser.</p>
+<p>The page will reload when you make changes.You may also see any lint errors in the console.</p>
+<p>### <cite>npm run build</cite></p>
+<p>Builds the app for production to the <cite>build</cite> folder.It correctly bundles React in production mode and optimizes the build for the best performance.</p>
+<p>The build is minified and the filenames include the hashes.Your app is ready to be deployed!</p>
+<p>See the section about [deployment](<a class="reference external" href="https://facebook.github.io/create-react-app/docs/deployment">https://facebook.github.io/create-react-app/docs/deployment</a>) for more information.</p>
 </section>
 <section id="test">
-<h2>Test<a class="headerlink" href="#test" title="Permalink to this headline"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install &#39;.[test]&#39;
-$ pip install pytest coverage
-$ pytest
+<h2>Test<a class="headerlink" href="#test" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ npm test
 </pre></div>
 </div>
+<p>Launches the test runner in the interactive watch mode. See the section about [running tests](<a class="reference external" href="https://facebook.github.io/create-react-app/docs/running-tests">https://facebook.github.io/create-react-app/docs/running-tests</a>) for more information.</p>
 <p>Run with coverage report:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ coverage run -m pytest
-$ coverage report
-$ coverage html  # open htmlcov/index.html in a browser
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ npm test -- --coverage
 </pre></div>
 </div>
 <p># Getting Started with Create React App</p>
