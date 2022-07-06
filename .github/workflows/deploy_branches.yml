@@ -1,0 +1,42 @@
+name: deploy
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Code checkout'
+      uses: actions/checkout@v2    
+      
+    - name: 'Build react app'
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+        cache: 'npm'
+    - run: npm ci
+    - run: |
+        PUBLIC_URL="/spatial-web-app/${GITHUB_REF_NAME}/" \
+        REACT_APP_VERSION="$(jq .version package.json)-${GITHUB_REF_NAME}-${GITHUB_SHA::7}" \
+        npm run build --if-present
+
+    - name: 'Set deploy path'
+      run: |
+        if [[ "${GITHUB_REF_NAME}" == 'main' ]]; then
+            echo "DEPLOY_PATH=latest" >> $GITHUB_ENV
+        else
+            echo "DEPLOY_PATH=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+        fi
+
+    - name: 'Upload files to S3'
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: "us-east-1"
+      run: aws --endpoint "${{ secrets.AWS_S3_ENDPOINT }}" s3 sync --delete build/ "s3://hindlimb/spatial-web-app/${DEPLOY_PATH}/"
