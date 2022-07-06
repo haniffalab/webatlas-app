@@ -1,8 +1,13 @@
-export function getConfig(config){
-    try{
-        return require(`./config/${config}.json`)
+const isValidURL = (config) => {
+    // cheapest URL validation I could think of
+    var pattern = new RegExp('^(https?:\\/\\/)(.*?).json$', 'i');
+    return !!pattern.test(config);
+};
+
+export function validateConfig(url) {
+    if (isValidURL(url)) {
+        return url;
     }
-    catch(error){
-        return null
-    }
+
+    return 'config/iss-human-brain-advanced.json';
 }
