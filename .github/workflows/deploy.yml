@@ -23,7 +23,7 @@ jobs:
     - run: npm ci
     - run: |
         PUBLIC_URL="/spatial-web-app/${GITHUB_REF_NAME}/" \
-        REACT_APP_VERSION="$(jq .version package.json)-${GITHUB_REF_NAME}-${GITHUB_SHA::7}" \
+        REACT_APP_VERSION="$(jq -r .version package.json)-${GITHUB_REF_NAME}-${GITHUB_SHA::7}" \
         npm run build --if-present
 
     - name: 'Set deploy path'
