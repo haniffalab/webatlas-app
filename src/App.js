@@ -18,6 +18,11 @@ function checkResponse(response) {
   return response.text().then((text) => {
     try {
       const config = JSON.parse(text);
+      if (!config.version) {
+        // @TODO add version property if it's missing
+        // https://github.com/vitessce/vitessce/blob/7e08d6b26c8aa2724fe3b684480fa8da930aad16/src/app/Vitessce.js#L69
+        config.version = "X.Y.Z";
+      }
       return Promise.resolve(() => (
         <Viewer
           config={config}
