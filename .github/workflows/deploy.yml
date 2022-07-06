@@ -1,4 +1,4 @@
-name: deploy_branch
+name: deploy
 
 on:
   push:
