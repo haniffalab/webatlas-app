@@ -22,7 +22,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: |
-        PUBLIC_URL="/spatial-web-app/${GITHUB_REF_NAME}/" \
+        PUBLIC_URL="/vitessce-app/${GITHUB_REF_NAME}/" \
         REACT_APP_VERSION="$(jq -r .version package.json)-${GITHUB_REF_NAME}-${GITHUB_SHA::7}" \
         npm run build --if-present
 
@@ -39,4 +39,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: "us-east-1"
-      run: aws --endpoint "${{ secrets.AWS_ENDPOINT_URL }}" s3 sync --delete build/ "s3://hindlimb/spatial-web-app/${DEPLOY_PATH}/"
+      run: aws --endpoint "${{ secrets.AWS_ENDPOINT_URL }}" s3 sync --delete build/ "s3://hindlimb/vitessce-app/${DEPLOY_PATH}/"
