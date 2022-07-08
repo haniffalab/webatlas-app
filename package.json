@@ -1,7 +1,7 @@
 {
   "name": "vitessce-app",
   "version": "0.1.0",
-  "homepage": "https://storage.googleapis.com/spatial-web-app",
+  "homepage": "https://storage.googleapis.com/vitessce-app",
   "private": true,
   "dependencies": {
     "@sentry/react": "^7.3.1",
