@@ -14,17 +14,6 @@ jobs:
     steps:
     - name: 'Code checkout'
       uses: actions/checkout@v2    
-      
-    - name: 'Build react app'
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
-        cache: 'npm'
-    - run: npm ci
-    - run: |
-        PUBLIC_URL="/vitessce-app/${GITHUB_REF_NAME}/" \
-        REACT_APP_VERSION="$(jq -r .version package.json)-${GITHUB_REF_NAME}-${GITHUB_SHA::7}" \
-        npm run build --if-present
 
     - name: 'Set deploy path'
       run: |
@@ -33,6 +22,17 @@ jobs:
         else
             echo "DEPLOY_PATH=${GITHUB_REF_NAME}" >> $GITHUB_ENV
         fi
+
+    - name: 'Build react app'
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+        cache: 'npm'
+    - run: npm ci
+    - run: |
+        PUBLIC_URL="/vitessce-app/${DEPLOY_PATH}/" \
+        REACT_APP_VERSION="$(jq -r .version package.json)-${GITHUB_REF_NAME}-${GITHUB_SHA::7}" \
+        npm run build --if-present
 
     - name: 'Upload files to S3'
       env:
