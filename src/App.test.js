@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { isValidInputTimeValue } from "@testing-library/user-event/dist/utils";
+import { act } from "react-dom/test-utils";
 import App from "./App";
 import Viewer from "./Viewer";
 
@@ -73,13 +74,11 @@ test("test minimal working config", () => {
 test("test Spatial rendered", () => {
   window.URL.createObjectURL = jest.fn();
   const page = render(<Viewer config={spatialLayout} />);
-  console.log(page);
   const spatialElement = screen.getByText(/Spatial/i);
   expect(spatialElement).toBeInTheDocument();
 });
 
 test("test Data Set rendered", () => {
-    console.log(JSON.stringify(dataSetLayout));
   window.URL.createObjectURL = jest.fn();
   render(<Viewer config={dataSetLayout} />);
   const dataElement = screen.getByText(/Data Set/i);
@@ -102,7 +101,6 @@ test("test Status rendered", () => {
 
 /*test("test Heatmap rendered", () => {
   //TO BE CONTINUED: Heatmap component causes issue with Inline Worker
-  // --> js file or inline makes no difference :(
   window.URL.createObjectUrl = jest.fn();
   render(<Viewer config={heatmapLayout} />);
   const heatmapElement = screen.getByText(/Heatmap/i);
@@ -141,5 +139,44 @@ test("Expression Histogram rendered", () => {
   window.URL.createObjectUrl = jest.fn();
   render(<Viewer config={histogramLayout} />);
   const histogramElement = screen.getByText(/Expression Histogram/i);
+  expect(histogramElement).toBeInTheDocument();
+});
+
+
+//App.js Testing
+
+test("testing output when incorrect url is injected", async () => {
+  delete window.location;
+  window.location = { search: '?config=http://example.com/doesnt_exist/config.json' };
+
+  act(() => {
+    render(<App />);
+  })
+  await new Promise((r) => setTimeout(r, 2000));
+  const histogramElement = screen.getByText(/Error fetching/i);
+  expect(histogramElement).toBeInTheDocument();
+});
+
+test("testing output when problems occur parsing JSON file", async () => {
+  delete window.location;
+  window.location = { search: '?config=http://localhost:3000/config/tests/invalid_json.json' };
+
+  act(() => {
+    render(<App />);
+  })
+  await new Promise((r) => setTimeout(r, 2000));
+  const histogramElement = screen.getByText(/Error parsing JSON/i);
+  expect(histogramElement).toBeInTheDocument();
+});
+
+test("testing that viewer is rendered when json file does not include version", async () => {
+  delete window.location;
+  window.location = { search: '?config=http://localhost:3000/config/tests/no_version.json' };
+
+  act(() => {
+    render(<App />);
+  })
+  await new Promise((r) => setTimeout(r, 2000));
+  const histogramElement = screen.getByText(/vitessce-app/i);
   expect(histogramElement).toBeInTheDocument();
 });
