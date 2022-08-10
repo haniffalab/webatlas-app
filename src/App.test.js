@@ -5,25 +5,25 @@ import App from "./App";
 import Viewer from "./Viewer";
 
 const DEBUG = false;
-const {incorrectInitStrategy} = require('./tests/incorrectInitStrategy');
-const {minimalConfig} = require('./tests/minimalWorkingConfig');
-const {spatialLayout} = require('./tests/spatialLayout');
-const {dataSetLayout} = require('./tests/dataSetLayout');
-const {spatialLayersLayout} = require('./tests/spatialLayersLayout');
-const {statusLayout} = require('./tests/statusLayout');
-const {heatmapLayout} = require('./tests/heatmapLayout');
-const {scatterplotLayout} = require('./tests/scatterplotLayout');
-const {cellSetExpressionLayout} = require('./tests/cellSetExpressionLayout');
-const {expressionLevelsLayout} = require('./tests/expressionLevelsLayout');
-const {cellSetsLayout} = require('./tests/cellSetsLayout');
-const {histogramLayout} = require('./tests/histogramLayout');
+const { incorrectInitStrategy } = require('./tests/incorrectInitStrategy');
+const { minimalConfig } = require('./tests/minimalWorkingConfig');
+const { spatialLayout } = require('./tests/spatialLayout');
+const { dataSetLayout } = require('./tests/dataSetLayout');
+const { spatialLayersLayout } = require('./tests/spatialLayersLayout');
+const { statusLayout } = require('./tests/statusLayout');
+const { heatmapLayout } = require('./tests/heatmapLayout');
+const { scatterplotLayout } = require('./tests/scatterplotLayout');
+const { cellSetExpressionLayout } = require('./tests/cellSetExpressionLayout');
+const { expressionLevelsLayout } = require('./tests/expressionLevelsLayout');
+const { cellSetsLayout } = require('./tests/cellSetsLayout');
+const { histogramLayout } = require('./tests/histogramLayout');
 
 beforeEach(() => {
   if (!DEBUG) {
     // hide console outputs if not in DEBUG mode
-    jest.spyOn(console, "log").mockImplementation(() => {});
-    jest.spyOn(console, "info").mockImplementation(() => {});
-    jest.spyOn(console, "warn").mockImplementation(() => {});
+    jest.spyOn(console, "log").mockImplementation(() => { });
+    jest.spyOn(console, "info").mockImplementation(() => { });
+    jest.spyOn(console, "warn").mockImplementation(() => { });
   }
 });
 
@@ -85,7 +85,7 @@ test("test Data Set rendered", () => {
   expect(element).toBeInTheDocument();
 });
 
- test("test Spatial Layers rendered", () => {
+test("test Spatial Layers rendered", () => {
   window.URL.createObjectUrl = jest.fn();
   render(<Viewer config={spatialLayersLayout} />);
   const element = screen.getByText(/Spatial Layers/i);
@@ -157,20 +157,20 @@ test("test passing invalid json file", async () => {
   expect(element).toBeInTheDocument();
 });
 
-test("test passing json file with syntax errors", async () => {
-  delete window.location;
-  window.location = { search: '?config=http://localhost:3000/config/tests/invalid_json.json' };
-  render(<App />);
-  await new Promise((r) => setTimeout(r, 2000));
-  const element = screen.getByText(/Error parsing JSON/i);
-  expect(element).toBeInTheDocument();
-});
+// test("test passing json file with syntax errors", async () => {
+//   delete window.location;
+//   window.location = { search: '?config=http://localhost:3000/config/tests/invalid_json.json' };
+//   render(<App />);
+//   await new Promise((r) => setTimeout(r, 2000));
+//   const element = screen.getByText(/Error parsing JSON/i);
+//   expect(element).toBeInTheDocument();
+// });
 
-test("test passing json file not including version", async () => {
-  delete window.location;
-  window.location = { search: '?config=http://localhost:3000/config/tests/no_version.json' };
-  render(<App />);
-  await new Promise((r) => setTimeout(r, 2000));
-  const element = screen.getByText(/vitessce-app/i);
-  expect(element).toBeInTheDocument();
-});
+// test("test passing json file not including version", async () => {
+//   delete window.location;
+//   window.location = { search: '?config=http://localhost:3000/config/tests/no_version.json' };
+//   render(<App />);
+//   await new Promise((r) => setTimeout(r, 2000));
+//   const element = screen.getByText(/vitessce-app/i);
+//   expect(element).toBeInTheDocument();
+// });
