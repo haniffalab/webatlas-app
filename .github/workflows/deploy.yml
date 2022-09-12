@@ -2,9 +2,9 @@ name: deploy
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [ main, dev, embryo ]
   pull_request:
-    branches: [ main, dev ]
+    branches: [ main, dev, embryo ]
 
   workflow_dispatch:
 
