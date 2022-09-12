@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Warning from './Warning';
 import Viewer from './Viewer';
-import { getConfig } from './Config';
+import { validateConfig } from './Config';
 
 import './App.css';
 
@@ -18,6 +18,11 @@ function checkResponse(response) {
   return response.text().then((text) => {
     try {
       const config = JSON.parse(text);
+      if (!config.version) {
+        // @TODO add version property if it's missing
+        // https://github.com/vitessce/vitessce/blob/7e08d6b26c8aa2724fe3b684480fa8da930aad16/src/app/Vitessce.js#L69
+        config.version = "X.Y.Z";
+      }
       return Promise.resolve(() => (
         <Viewer
           config={config}
@@ -50,19 +55,9 @@ function AwaitResponse(props) {
 
 function App() {
   const urlParams = new URLSearchParams(window.location.search);
-  let configUrl = urlParams.get('config');
-
-  configUrl = configUrl ? configUrl : "iss-human-brain-simple"
-
-  const config = getConfig(configUrl)
-  if(config){
-    return (
-      <Viewer
-        config={config}
-      />
-    );
-  }
-  const responsePromise = fetch(configUrl)
+  const configUrl = urlParams.get('config');
+  const config = validateConfig(configUrl)
+  const responsePromise = fetch(config)
     .then(response => checkResponse(response))
     .catch(error => Promise.resolve(() => (
       <Warning
