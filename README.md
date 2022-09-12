@@ -6,8 +6,8 @@
 
 # Vitessce App
 
-[![demo](https://img.shields.io/badge/demo-latest-blue)](https://hindlimb.cog.sanger.ac.uk/vitessce-app/latest/index.html)
-[![demo](https://img.shields.io/badge/demo-dev-blue)](https://hindlimb.cog.sanger.ac.uk/vitessce-app/dev/index.html)
+[![demo](https://img.shields.io/badge/demo-latest-blue)](https://vitessce-app.cog.sanger.ac.uk/latest/index.html)
+[![demo](https://img.shields.io/badge/demo-dev-blue)](https://vitessce-app.cog.sanger.ac.uk/dev/index.html)
 
 This React app impliments [Vitessce](https://github.com/vitessce/vitessce) to create a web portal for spatial single cell experiment data. The app is designed to read data produced by the [spatial-data-pipeline](https://github.com/haniffalab/sci-spatial-data). 
 
