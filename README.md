@@ -15,6 +15,10 @@ This React app impliments [Vitessce](https://github.com/vitessce/vitessce) to cr
 
 In the project directory, you can run:
 
+### `npm install`
+
+Triggers the installation of all modules that are listed as dependencies for this app. Should be run before starting the application.
+
 ### `npm start`
 
 Runs the app in the development mode.\
