@@ -20,15 +20,19 @@ export default function Viewer(props) {
     }
   }, []);
 
+  let title;
+  if (typeof config === 'object' && config.hasOwnProperty('name')) {
+    title = config.name;
+  } else {
+    title = "";
+  }
   useEffect(() => {
-    if (config.hasOwnProperty('name')) {
-      document.title = config.name;
-    }
+    document.title = title;
   });
 
   return (
     <div className="App">
-      <Header title={config.name} />
+      <Header />
       <div ref={targetRef} style={{ height: 'calc(100vh - 56px)' }}>
         <Vitessce config={config} height={dimensions.height} theme="dark" />
       </div>
