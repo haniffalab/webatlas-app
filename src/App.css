@@ -1,3 +1,7 @@
+html {
+  background-color: #333;
+}
+
 .vitessce-container.vitessce-theme-dark .bg-primary {
   background-color: #222 !important;
 }

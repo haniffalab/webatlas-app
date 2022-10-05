@@ -13,7 +13,7 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "^16.14.0",
     "react-scripts": "5.0.0",
-    "vitessce": "^1.1.21",
+    "vitessce": "^1.2.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

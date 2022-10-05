@@ -10,7 +10,7 @@ function checkResponse(response) {
     return Promise.resolve(
       () => (
         <Warning
-          title="Fetch response not OK"
+          message="Error fetching config"
         />
       ),
     );
@@ -31,7 +31,7 @@ function checkResponse(response) {
     } catch (e) {
       return Promise.resolve(() => (
         <Warning
-          title="Error parsing JSON"
+          message="Error parsing config"
         />
       ));
     }
@@ -50,7 +50,7 @@ function AwaitResponse(props) {
       setIsLoading(false);
     });
   }, [response]);
-  return (!isLoading ? React.createElement(responseRef.current) : <Warning title="Loading..." />);
+  return (!isLoading ? React.createElement(responseRef.current) : <Warning message="Loading..." />);
 }
 
 function App() {
@@ -61,7 +61,7 @@ function App() {
     .then(response => checkResponse(response))
     .catch(error => Promise.resolve(() => (
       <Warning
-        title="Error fetching"
+        message="Error fetching config"
       />
     )));
   return (
