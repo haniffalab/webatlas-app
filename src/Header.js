@@ -27,10 +27,13 @@ export default function Header(props) {
             </ButtonGroup>    
           }            
           <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">                   
-            <ButtonGroup aria-label="Version">
+          <Navbar.Collapse className="justify-content-end">
+            <ButtonGroup aria-label="Version" className="pe-2">
               <Button variant="secondary" size="sm" disabled>vitessce-app</Button>
-              <Button size="sm" href="https://github.com/haniffalab/vitessce-app/releases/tag/v0.1.0">0.1.0</Button>
+              <Button variant="primary" size="sm" href="https://github.com/haniffalab/vitessce-app/releases/tag/v0.1.0">0.1.0</Button>
+            </ButtonGroup>
+            <ButtonGroup aria-label="Support">
+              <Button variant="secondary" size="sm" href="https://github.com/haniffalab/vitessce-app">Docs</Button>
             </ButtonGroup>
           </Navbar.Collapse>
         </Container>
