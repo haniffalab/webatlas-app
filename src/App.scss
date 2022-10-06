@@ -2,15 +2,11 @@
 $body-bg: #333;
 $body-color: #d3d3d3;
 
-@import url("http://fonts.googleapis.com/css?family=Poppins:400,300,700");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,300,700");
 $font-family-sans-serif: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
-
-
-
-
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 
 // Static CSS
 .vitessce-container.vitessce-theme-dark .bg-primary {
@@ -22,7 +18,7 @@ $font-family-sans-serif: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, 
 }
 
 .vitessce-container div {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
 }
 
 @media (max-width: 991px) {
