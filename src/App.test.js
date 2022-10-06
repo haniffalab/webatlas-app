@@ -153,7 +153,8 @@ test("test passing invalid json file", async () => {
     render(<App />);
   })
   await new Promise((r) => setTimeout(r, 2000));
-  const element = screen.getByText(/Error fetching/i);
+  const elements = screen.getAllByText(/Unable to fetch config file/i);
+  const element = Array.isArray(elements) ? elements[0] : elements;
   expect(element).toBeInTheDocument();
 });
 
