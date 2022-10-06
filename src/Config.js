@@ -9,6 +9,6 @@ export function validateConfig(url) {
         return url;
     }
 
-    console.log(process.env.PUBLIC_URL + '/config/sample.json')
+    // console.log(process.env.PUBLIC_URL + '/config/sample.json')
     return process.env.PUBLIC_URL + '/config/sample.json';
 }
