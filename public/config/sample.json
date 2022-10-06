@@ -1,0 +1,207 @@
+{
+    "version": "1.0.14",
+    "name": "Sample of 10x Visium fetal thymus tissue",
+    "description": "",
+    "datasets": [
+        {
+            "uid": "2",
+            "name": "visium",
+            "files": [
+                {
+                    "type": "raster",
+                    "fileType": "raster.json",
+                    "options": {
+                        "renderLayers": [
+                            "visium_2_raw",
+                            "visium_2_label"
+                        ],
+                        "schemaVersion": "0.0.2",
+                        "images": [
+                            {
+                                "name": "visium_2_raw",
+                                "url": "https://haniffa.cog.sanger.ac.uk/fetal-immune/fetal-thymus/visium/0.0.1/visium_2_raw.zarr",
+                                "type": "zarr",
+                                "metadata": {
+                                    "isBitmask": false,
+                                    "dimensions": [
+                                        {
+                                            "field": "t",
+                                            "type": "quantitative",
+                                            "values": null
+                                        },
+                                        {
+                                            "field": "channel",
+                                            "type": "nominal",
+                                            "values": []
+                                        },
+                                        {
+                                            "field": "y",
+                                            "type": "quantitative",
+                                            "values": null
+                                        },
+                                        {
+                                            "field": "x",
+                                            "type": "quantitative",
+                                            "values": null
+                                        }
+                                    ],
+                                    "isPyramid": true,
+                                    "transform": {
+                                        "translate": {
+                                            "y": 0,
+                                            "x": 0
+                                        },
+                                        "scale": 1
+                                    }
+                                }
+                            },
+                            {
+                                "name": "visium_2_label",
+                                "url": "https://haniffa.cog.sanger.ac.uk/fetal-immune/fetal-thymus/visium/0.0.1/visium_2_label.zarr",
+                                "type": "zarr",
+                                "metadata": {
+                                    "isBitmask": true,
+                                    "dimensions": [
+                                        {
+                                            "field": "t",
+                                            "type": "quantitative",
+                                            "values": null
+                                        },
+                                        {
+                                            "field": "channel",
+                                            "type": "nominal",
+                                            "values": [
+                                                "Labels"
+                                            ]
+                                        },
+                                        {
+                                            "field": "y",
+                                            "type": "quantitative",
+                                            "values": null
+                                        },
+                                        {
+                                            "field": "x",
+                                            "type": "quantitative",
+                                            "values": null
+                                        }
+                                    ],
+                                    "isPyramid": true,
+                                    "transform": {
+                                        "translate": {
+                                            "y": 0,
+                                            "x": 0
+                                        },
+                                        "scale": 1
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "cells",
+                    "fileType": "anndata-cells.zarr",
+                    "url": "https://haniffa.cog.sanger.ac.uk/fetal-immune/fetal-thymus/visium/0.0.1/visium_2_anndata.zarr",
+                    "options": {
+                        "xy": "obsm/spatial",
+                        "mappings": {
+                            "X_UMAP": {
+                                "key": "obsm/X_umap",
+                                "dims": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        },
+                        "factors": [
+                            "obs/sample",
+                            "obs/label_id",
+                            "obs/total_counts"
+                        ]
+                    }
+                },
+                {
+                    "type": "cell-sets",
+                    "fileType": "anndata-cell-sets.zarr",
+                    "url": "https://haniffa.cog.sanger.ac.uk/fetal-immune/fetal-thymus/visium/0.0.1/visium_2_anndata.zarr",
+                    "options": [
+                        {
+                            "groupName": "Sample",
+                            "setName": "obs/sample"
+                        }
+                    ]
+                },
+                {
+                    "type": "expression-matrix",
+                    "fileType": "anndata-expression-matrix.zarr",
+                    "url": "https://haniffa.cog.sanger.ac.uk/fetal-immune/fetal-thymus/visium/0.0.1/visium_2_anndata.zarr",
+                    "options": {
+                        "matrix": "X"
+                    }
+                }
+            ]
+        }
+    ],
+    "coordinationSpace": {
+        "dataset": {
+            "A": "2"
+        },
+        "embeddingType": {
+            "X_UMAP": "X_UMAP"
+        }
+    },
+    "layout": [
+        {
+            "component": "layerController",
+            "coordinationScopes": {
+                "dataset": "A"
+            },
+            "x": 0,
+            "y": 6,
+            "w": 3,
+            "h": 6
+        },
+        {
+            "component": "scatterplot",
+            "coordinationScopes": {
+                "dataset": "A",
+                "embeddingType": "X_UMAP"
+            },
+            "x": 0,
+            "y": 0,
+            "w": 3,
+            "h": 6
+        },
+        {
+            "component": "spatial",
+            "coordinationScopes": {
+                "dataset": "A"
+            },
+            "x": 3,
+            "y": 0,
+            "w": 7,
+            "h": 12
+        },
+        {
+            "component": "genes",
+            "coordinationScopes": {
+                "dataset": "A"
+            },
+            "x": 10,
+            "y": 0,
+            "w": 2,
+            "h": 6
+        },
+        {
+            "component": "cellSets",
+            "coordinationScopes": {
+                "dataset": "A"
+            },
+            "x": 10,
+            "y": 6,
+            "w": 2,
+            "h": 6
+        }
+    ],
+    "initStrategy": "auto"
+}
