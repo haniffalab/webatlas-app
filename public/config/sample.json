@@ -1,0 +1,242 @@
+{
+    "version": "1.0.14",
+    "name": "In-situ sequencing sample of embryo hindlimb tissue",
+    "description": "",
+    "datasets": [
+        {
+            "uid": "ISS_1",
+            "name": "Hindlimb_ISS_1",
+            "files": [
+                {
+                    "type": "raster",
+                    "fileType": "raster.json",
+                    "options": {
+                        "renderLayers": [
+                            "Hindlimb_ISS_1_ISS_1_raw",
+                            "Hindlimb_ISS_1_ISS_1_label"
+                        ],
+                        "schemaVersion": "0.0.2",
+                        "images": [
+                            {
+                                "name": "Hindlimb_ISS_1_ISS_1_raw",
+                                "url": "https://hindlimb.cog.sanger.ac.uk/datasets/ISS/0.0.1/Hindlimb_ISS_1_ISS_1_raw.zarr",
+                                "type": "zarr",
+                                "metadata": {
+                                    "isBitmask": false,
+                                    "dimensions": [
+                                        {
+                                            "field": "t",
+                                            "type": "quantitative",
+                                            "values": null
+                                        },
+                                        {
+                                            "field": "channel",
+                                            "type": "nominal",
+                                            "values": [
+                                                "c01 DAPI",
+                                                "c01 anchor",
+                                                "c01 bg",
+                                                "c01 bg",
+                                                "c01 bg",
+                                                "c02 DAPI",
+                                                "c02 Cy5",
+                                                "c02 Alexa Fluor 488",
+                                                "c02 Cy3",
+                                                "c02 Atto 425",
+                                                "c03 DAPI",
+                                                "c03 Cy5",
+                                                "c03 Alexa Fluor 488",
+                                                "c03 Cy3",
+                                                "c03 Atto 425",
+                                                "c04 DAPI",
+                                                "c04 Cy5",
+                                                "c04 Alexa Fluor 488",
+                                                "c04 Cy3",
+                                                "c04 Atto 425",
+                                                "c05 DAPI",
+                                                "c05 Cy5",
+                                                "c05 Alexa Fluor 488",
+                                                "c05 Cy3",
+                                                "c05 Atto 425",
+                                                "c06 DAPI",
+                                                "c06 Cy5",
+                                                "c06 Alexa Fluor 488",
+                                                "c06 Cy3",
+                                                "c06 Atto 425",
+                                                "c07 DAPI",
+                                                "c07 Cy5",
+                                                "c07 Alexa Fluor 488",
+                                                "c07 Cy3",
+                                                "c07 Atto 425"
+                                            ]
+                                        },
+                                        {
+                                            "field": "y",
+                                            "type": "quantitative",
+                                            "values": null
+                                        },
+                                        {
+                                            "field": "x",
+                                            "type": "quantitative",
+                                            "values": null
+                                        }
+                                    ],
+                                    "isPyramid": true,
+                                    "transform": {
+                                        "translate": {
+                                            "y": 0,
+                                            "x": 0
+                                        },
+                                        "scale": 1
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Hindlimb_ISS_1_ISS_1_label",
+                                "url": "https://hindlimb.cog.sanger.ac.uk/datasets/ISS/0.0.1/Hindlimb_ISS_1_ISS_1_label.zarr",
+                                "type": "zarr",
+                                "metadata": {
+                                    "isBitmask": true,
+                                    "dimensions": [
+                                        {
+                                            "field": "t",
+                                            "type": "quantitative",
+                                            "values": null
+                                        },
+                                        {
+                                            "field": "channel",
+                                            "type": "nominal",
+                                            "values": [
+                                                "Labels"
+                                            ]
+                                        },
+                                        {
+                                            "field": "y",
+                                            "type": "quantitative",
+                                            "values": null
+                                        },
+                                        {
+                                            "field": "x",
+                                            "type": "quantitative",
+                                            "values": null
+                                        }
+                                    ],
+                                    "isPyramid": true,
+                                    "transform": {
+                                        "translate": {
+                                            "y": 0,
+                                            "x": 0
+                                        },
+                                        "scale": 1
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "cells",
+                    "fileType": "anndata-cells.zarr",
+                    "url": "https://hindlimb.cog.sanger.ac.uk/datasets/ISS/0.0.1/Hindlimb_ISS_1_ISS_1_anndata.zarr",
+                    "options": {
+                        "xy": "obsm/spatial",
+                        "mappings": {
+                            "X_UMAP": {
+                                "key": "obsm/X_umap",
+                                "dims": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "X_PCA": {
+                                "key": "obsm/X_pca",
+                                "dims": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        },
+                        "factors": [
+                            "obs/sample"
+                        ]
+                    }
+                },
+                {
+                    "type": "cell-sets",
+                    "fileType": "anndata-cell-sets.zarr",
+                    "url": "https://hindlimb.cog.sanger.ac.uk/datasets/ISS/0.0.1/Hindlimb_ISS_1_ISS_1_anndata.zarr",
+                    "options": [
+                        {
+                            "groupName": "Cluster",
+                            "setName": "obs/cluster"
+                        },
+                        {
+                            "groupName": "CellType",
+                            "setName": "obs/cell_type"
+                        }
+                    ]
+                },
+                {
+                    "type": "expression-matrix",
+                    "fileType": "anndata-expression-matrix.zarr",
+                    "url": "https://hindlimb.cog.sanger.ac.uk/datasets/ISS/0.0.1/Hindlimb_ISS_1_ISS_1_anndata.zarr",
+                    "options": {
+                        "matrix": "X"
+                    }
+                }
+            ]
+        }
+    ],
+    "coordinationSpace": {
+        "dataset": {
+            "A": "ISS_1"
+        },
+        "embeddingType": {
+            "X_UMAP": "X_UMAP",
+            "X_PCA": "X_PCA"
+        }
+    },
+    "layout": [
+        {
+            "component": "layerController",
+            "coordinationScopes": {
+                "dataset": "A"
+            },
+            "x": 0,
+            "y": 0,
+            "w": 2,
+            "h": 12
+        },
+        {
+            "component": "spatial",
+            "coordinationScopes": {
+                "dataset": "A"
+            },
+            "x": 2,
+            "y": 0,
+            "w": 8,
+            "h": 12
+        },
+        {
+            "component": "genes",
+            "coordinationScopes": {
+                "dataset": "A"
+            },
+            "x": 10,
+            "y": 0,
+            "w": 2,
+            "h": 6
+        },
+        {
+            "component": "cellSets",
+            "coordinationScopes": {
+                "dataset": "A"
+            },
+            "x": 10,
+            "y": 6,
+            "w": 2,
+            "h": 6
+        }
+    ],
+    "initStrategy": "auto"
+}

@@ -9,5 +9,6 @@ export function validateConfig(url) {
         return url;
     }
 
-    return 'config/iss-human-brain-advanced.json';
+    console.log(window.location.origin + window.location.pathname.replace(/\/+$/, '') + '/config/sample.json')
+    return window.location.origin + window.location.pathname.replace(/\/+$/, '') + '/config/sample.json';
 }
