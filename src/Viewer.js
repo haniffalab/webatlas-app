@@ -1,8 +1,7 @@
 import { useEffect, useRef, useLayoutEffect, useState } from "react";
+import Header from './Header';
 import { Vitessce } from "vitessce/dist/umd/production/index.min.js";
 import "vitessce/dist/umd/production/static/css/index.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './Header';
 
 export default function Viewer(props) {
   const {
@@ -32,7 +31,7 @@ export default function Viewer(props) {
 
   return (
     <div className="App">
-      <Header />
+      <Header title={title} />
       <div ref={targetRef} style={{ height: 'calc(100vh - 56px)' }}>
         <Vitessce config={config} height={dimensions.height} theme="dark" />
       </div>

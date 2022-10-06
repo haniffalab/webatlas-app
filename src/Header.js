@@ -1,5 +1,4 @@
 import { ButtonGroup, Button, Navbar, Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from './logo.png';
 
 export default function Header(props) {
@@ -24,8 +23,8 @@ export default function Header(props) {
           {!!message &&
             <ButtonGroup aria-label="Version">
               <Button variant="secondary" size="sm" disabled>{message}</Button>
-            </ButtonGroup>    
-          }            
+            </ButtonGroup>
+          }
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <ButtonGroup aria-label="Version" className="pe-2">

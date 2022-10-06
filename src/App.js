@@ -3,14 +3,16 @@ import Warning from './Warning';
 import Viewer from './Viewer';
 import { validateConfig } from './Config';
 
-import './App.css';
+import "./App.scss";
 
 function checkResponse(response) {
   if (!response.ok) {
+    console.log(response)
     return Promise.resolve(
       () => (
         <Warning
-          message="Error fetching config"
+          title="Error"
+          message="Unable to fetch config file"
         />
       ),
     );
@@ -29,9 +31,11 @@ function checkResponse(response) {
         />
       ));
     } catch (e) {
+      console.log(e)
       return Promise.resolve(() => (
         <Warning
-          message="Error parsing config"
+          title="Error"
+          message="Unable to parse config file"
         />
       ));
     }
@@ -61,7 +65,8 @@ function App() {
     .then(response => checkResponse(response))
     .catch(error => Promise.resolve(() => (
       <Warning
-        message="Error fetching config"
+        title="Error"
+        message="Unable to fetch config file"
       />
     )));
   return (
