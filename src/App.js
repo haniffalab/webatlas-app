@@ -5,7 +5,7 @@ import { validateConfig } from './Config';
 
 import "./App.scss";
 
-function checkResponse(response) {
+function checkResponse(response, theme) {
   if (!response.ok) {
     console.log(response)
     return Promise.resolve(
@@ -28,6 +28,7 @@ function checkResponse(response) {
       return Promise.resolve(() => (
         <Viewer
           config={config}
+          theme={theme}
         />
       ));
     } catch (e) {
@@ -36,6 +37,7 @@ function checkResponse(response) {
         <Warning
           title="Error"
           message="Unable to parse config file"
+          theme={theme}
         />
       ));
     }
@@ -60,9 +62,10 @@ function AwaitResponse(props) {
 function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const configUrl = urlParams.get('config');
+  const theme = ['light', 'dark'].includes(urlParams.get('theme')) ? urlParams.get('theme') : 'dark';
   const config = validateConfig(configUrl)
   const responsePromise = fetch(config)
-    .then(response => checkResponse(response))
+    .then(response => checkResponse(response, theme))
     .catch(error => Promise.resolve(() => (
       <Warning
         title="Error"

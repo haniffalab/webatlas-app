@@ -4,11 +4,12 @@ import Logo from './logo.png';
 export default function Header(props) {
   const {
     title,
-    message
+    message,
+    theme
   } = props;
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg={theme} variant={theme} expand="lg">
         <Container fluid>
           <Navbar.Brand>
             <img
