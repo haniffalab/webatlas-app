@@ -11,7 +11,6 @@ $font-family-sans-serif: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, 
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
 
-
 // Global CSS
 .vitessce-container div {
     font-family: "Poppins", sans-serif !important;
@@ -26,4 +25,12 @@ $font-family-sans-serif: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, 
 // Theme CSS
 .navbar.navbar-light {
     border-bottom: 1px solid #ddd;
+}
+
+.vitessce-container.vitessce-theme-light .bg-primary {
+    background-color: #F1F1F1 !important;
+}
+
+.vitessce-container.vitessce-theme-light .bg-secondary {
+    background-color: #F1F1F1 !important;
 }
