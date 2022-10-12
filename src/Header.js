@@ -21,11 +21,13 @@ export default function Header(props) {
               className="d-inline-block align-top me-2"
             />
           </Navbar.Brand>
-          <span class="navbar-text pe-2">
-            {!!title && title}
-          </span>
+          {!!title &&
+            <Navbar.Text className="pe-2">
+              {title}
+            </Navbar.Text>
+          }
           {!!message &&
-            <ButtonGroup aria-label="Message">
+            <ButtonGroup aria-label="Message" className="pe-2 d-none d-lg-block">
               <Button variant="secondary" size="sm" disabled>{message}</Button>
             </ButtonGroup>
           }
