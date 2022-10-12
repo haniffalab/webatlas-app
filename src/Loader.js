@@ -1,10 +1,6 @@
 import "./themes/Loader.scss";
 
-export default function Loader(props) {
-  const {
-    title,
-    message
-  } = props;
+export default function Loader() {
   return (
     <div className="App">
         <div className="loader">
