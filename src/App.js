@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Warning from './Warning';
+import Loader from './Loader';
 import Viewer from './Viewer';
 import { validateConfig } from './Config';
 
@@ -55,7 +56,7 @@ function AwaitResponse(props) {
       setIsLoading(false);
     });
   }, [response]);
-  return (!isLoading ? React.createElement(responseRef.current) : <Warning message="Loading..." />);
+  return (!isLoading ? React.createElement(responseRef.current) : <Loader />);
 }
 
 function App(props) {
