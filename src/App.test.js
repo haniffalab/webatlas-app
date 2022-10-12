@@ -27,11 +27,10 @@ beforeEach(() => {
   }
 });
 
-test("renders loading text", () => {
+test("renders loader", () => {
   window.URL.createObjectURL = jest.fn();
-  render(<App />);
-  const element = screen.getByText(/Loading.../i);
-  expect(element).toBeInTheDocument();
+  const { container } = render(<App />);
+  expect(container.getElementsByClassName("loader-ring").length).toBe(1);
 });
 
 //ERROR TESTING

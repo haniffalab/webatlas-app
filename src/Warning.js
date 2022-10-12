@@ -3,11 +3,12 @@ import Header from './Header';
 export default function Warning(props) {
   const {
     title,
-    message
+    message,
+    theme
   } = props;
   return (
     <div className="App">
-      <Header title={title} message={message} />
+      <Header title={title} message={message} theme={theme} />
       {!!title &&
         <div className="container d-flex align-items-center justify-content-center vh-100">
           <div className="text-center">

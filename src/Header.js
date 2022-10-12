@@ -4,11 +4,13 @@ import Logo from './logo.png';
 export default function Header(props) {
   const {
     title,
-    message
+    message,
+    theme
   } = props;
+
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg={theme} variant={theme} expand="lg">
         <Container fluid>
           <Navbar.Brand>
             <img
@@ -18,10 +20,14 @@ export default function Header(props) {
               height="30"
               className="d-inline-block align-top me-2"
             />
-            {!!title && title}
           </Navbar.Brand>
+          {!!title &&
+            <Navbar.Text className="pe-2">
+              {title}
+            </Navbar.Text>
+          }
           {!!message &&
-            <ButtonGroup aria-label="Version">
+            <ButtonGroup aria-label="Message" className="pe-2 d-none d-lg-block">
               <Button variant="secondary" size="sm" disabled>{message}</Button>
             </ButtonGroup>
           }

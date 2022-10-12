@@ -1,23 +1,17 @@
 // Override default bootstrap variables
 $primary: #0071a7;
-$body-bg: #333;
-$body-color: #d3d3d3;
+$secondary: #333;
+$body-bg: #fff;
+$body-color: #333;
 
+// Override default bootstrap variables
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,300,700");
 $font-family-sans-serif: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
 
-// Static CSS
-.vitessce-container.vitessce-theme-dark .bg-primary {
-    background-color: #222 !important;
-}
-
-.vitessce-container.vitessce-theme-dark .bg-secondary {
-    background-color: #000 !important;
-}
-
+// Global CSS
 .vitessce-container div {
     font-family: "Poppins", sans-serif !important;
 }
@@ -26,4 +20,17 @@ $font-family-sans-serif: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, 
     .navbar-collapse {
         padding-top: 15px;
     }
+}
+
+// Theme CSS
+.navbar.navbar-light {
+    border-bottom: 1px solid #ddd;
+}
+
+.vitessce-container.vitessce-theme-light .bg-primary {
+    background-color: #F1F1F1 !important;
+}
+
+.vitessce-container.vitessce-theme-light .bg-secondary {
+    background-color: #F1F1F1 !important;
 }

@@ -5,7 +5,8 @@ import "vitessce/dist/umd/production/static/css/index.css";
 
 export default function Viewer(props) {
   const {
-    config
+    config,
+    theme
   } = props;
   const targetRef = useRef();
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -31,9 +32,9 @@ export default function Viewer(props) {
 
   return (
     <div className="App">
-      <Header title={title} />
+      <Header title={title} theme={theme} />
       <div ref={targetRef} style={{ height: 'calc(100vh - 56px)' }}>
-        <Vitessce config={config} height={dimensions.height} theme="dark" />
+        <Vitessce config={config} height={dimensions.height} theme={theme} />
       </div>
     </div>
   );

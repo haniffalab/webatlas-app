@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import Warning from './Warning';
+import Loader from './Loader';
 import Viewer from './Viewer';
 import { validateConfig } from './Config';
 
-import "./App.scss";
-
-function checkResponse(response) {
+function checkResponse(response, theme) {
   if (!response.ok) {
     console.log(response)
     return Promise.resolve(
@@ -13,6 +12,7 @@ function checkResponse(response) {
         <Warning
           title="Error"
           message="Unable to fetch config file"
+          theme={theme}
         />
       ),
     );
@@ -28,6 +28,7 @@ function checkResponse(response) {
       return Promise.resolve(() => (
         <Viewer
           config={config}
+          theme={theme}
         />
       ));
     } catch (e) {
@@ -36,6 +37,7 @@ function checkResponse(response) {
         <Warning
           title="Error"
           message="Unable to parse config file"
+          theme={theme}
         />
       ));
     }
@@ -54,19 +56,23 @@ function AwaitResponse(props) {
       setIsLoading(false);
     });
   }, [response]);
-  return (!isLoading ? React.createElement(responseRef.current) : <Warning message="Loading..." />);
+  return (!isLoading ? React.createElement(responseRef.current) : <Loader />);
 }
 
-function App() {
+function App(props) {
+  const {
+    theme,
+  } = props;
   const urlParams = new URLSearchParams(window.location.search);
   const configUrl = urlParams.get('config');
   const config = validateConfig(configUrl)
   const responsePromise = fetch(config)
-    .then(response => checkResponse(response))
+    .then(response => checkResponse(response, theme))
     .catch(error => Promise.resolve(() => (
       <Warning
         title="Error"
         message="Unable to fetch config file"
+        theme={theme}
       />
     )));
   return (

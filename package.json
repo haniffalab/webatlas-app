@@ -1,6 +1,6 @@
 {
   "name": "vitessce-app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@sentry/react": "^7.9.0",
@@ -18,8 +18,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 start",
-    "build": "REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 build",
+    "start": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 start",
+    "build": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts --max_old_space_size=4096 test",
     "eject": "react-scripts eject"
   },
@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jest-canvas-mock": "^2.4.0"
   }
 }
