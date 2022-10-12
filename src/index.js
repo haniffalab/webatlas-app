@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-if(process.env.REACT_APP_SENTRY_DSN){
+if (process.env.REACT_APP_SENTRY_DSN) {
   Sentry.init({
     dsn: process.env.REACT_APP_SENTRY_DSN,
     integrations: [new BrowserTracing()],
@@ -15,8 +15,29 @@ if(process.env.REACT_APP_SENTRY_DSN){
   });
 }
 
+const urlParams = new URLSearchParams(window.location.search);
+const themeParam = urlParams.get('theme');
+const themes = ["dark", "light"];
+const theme = themes.includes(themeParam) ? themeParam : "dark";
+console.log(theme)
+const ThemeLight = React.lazy(() => import('./themes/Light'));
+const ThemeDark = React.lazy(() => import('./themes/Dark'));
+const ThemeSelector = ({ children }) => {
+  return (
+    <>
+      <React.Suspense fallback={<></>}>
+        {(theme === "dark") && <ThemeDark />}
+        {(theme === "light") && <ThemeLight />}
+      </React.Suspense>
+      {children}
+    </>
+  )
+}
+
 ReactDOM.render(
-  <App />,
+  <ThemeSelector>
+    <App theme={theme} />
+  </ThemeSelector>,
   document.getElementById('root')
 );
 
