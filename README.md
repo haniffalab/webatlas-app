@@ -7,7 +7,7 @@
 
 [![demo](https://img.shields.io/badge/demos-view-blue)](https://github.com/haniffalab/vitessce-pipeline/blob/main/DEMOS.md)
 
-This React app impliments [Vitessce](https://github.com/vitessce/vitessce) to create a web portal for spatial and single cell experiment data. The app is designed to read data produced by the [vitessce-pipeline](https://github.com/haniffalab/vitessce-pipeline). 
+This React app impliments [Vitessce](https://github.com/vitessce/vitessce) to create a web portal for spatial and single-cell experiment data. The app is designed to read data produced by the [vitessce-pipeline](https://github.com/haniffalab/vitessce-pipeline). 
 
 ## Available Scripts
 
