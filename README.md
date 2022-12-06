@@ -2,14 +2,12 @@
 [![deploy](https://github.com/haniffalab/vitessce-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/haniffalab/vitessce-app/actions/workflows/deploy.yml)
 [![codecov](https://codecov.io/gh/haniffalab/vitessce-app/branch/main/graph/badge.svg?token=ZT374N3LC3)](https://codecov.io/gh/haniffalab/vitessce-app)
 [![react](https://img.shields.io/badge/react-16-blue)](https://reactjs.org)
-[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 # Vitessce App
 
-[![demo](https://img.shields.io/badge/demo-latest-blue)](https://vitessce-app.cog.sanger.ac.uk/latest/index.html)
-[![demo](https://img.shields.io/badge/demo-dev-blue)](https://vitessce-app.cog.sanger.ac.uk/dev/index.html)
+[![demo](https://img.shields.io/badge/demos-view-blue)](https://github.com/haniffalab/vitessce-pipeline/blob/main/DEMOS.md)
 
-This React app impliments [Vitessce](https://github.com/vitessce/vitessce) to create a web portal for spatial single cell experiment data. The app is designed to read data produced by the [spatial-data-pipeline](https://github.com/haniffalab/sci-spatial-data). 
+This React app impliments [Vitessce](https://github.com/vitessce/vitessce) to create a web portal for spatial and single cell experiment data. The app is designed to read data produced by the [vitessce-pipeline](https://github.com/haniffalab/vitessce-pipeline). 
 
 ## Available Scripts
 
@@ -39,3 +37,8 @@ Builds the app for production to the `build` folder.
 ### Team
 
 ### Deployment
+
+The app is automatically deployed. 
+
+[![demo](https://img.shields.io/badge/demo-latest-blue)](https://vitessce-app.cog.sanger.ac.uk/latest/index.html)
+[![demo](https://img.shields.io/badge/demo-dev-blue)](https://vitessce-app.cog.sanger.ac.uk/dev/index.html)
