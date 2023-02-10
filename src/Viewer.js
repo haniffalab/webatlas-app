@@ -1,7 +1,7 @@
 import { useEffect, useRef, useLayoutEffect, useState } from "react";
 import Header from './Header';
-import { Vitessce } from "vitessce/dist/umd/production/index.min.js";
-import "vitessce/dist/umd/production/static/css/index.css";
+import { Vitessce } from 'vitessce';
+//import "vitessce/dist/umd/production/static/css/index.css";
 
 export default function Viewer(props) {
   const {
