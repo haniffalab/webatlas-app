@@ -1,7 +1,8 @@
 // Override default bootstrap variables
 $primary: #0071a7;
-$body-bg: #fff;
-$body-color: #333;
+$secondary: #333;
+$body-bg: #333;
+$body-color: #fff;
 
 // Override default bootstrap variables
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,300,700");
@@ -19,13 +20,4 @@ $font-family-sans-serif: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, 
     .navbar-collapse {
         padding-top: 15px;
     }
-}
-
-// Theme CSS
-.vitessce-container.vitessce-theme-dark .bg-primary {
-    background-color: #222 !important;
-}
-
-.vitessce-container.vitessce-theme-dark .bg-secondary {
-    background-color: #000 !important;
 }
