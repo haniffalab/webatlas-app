@@ -37,4 +37,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: "us-east-1"
-      run: aws --endpoint "${{ secrets.AWS_ENDPOINT_URL }}" s3 sync --delete build/ "s3://vitessce-app/${DEPLOY_PATH}/"
+      run: aws --endpoint "${{ secrets.AWS_ENDPOINT_URL }}" s3 sync --delete build/ "s3://webatlas/${DEPLOY_PATH}/"
