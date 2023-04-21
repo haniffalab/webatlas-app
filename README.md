@@ -5,7 +5,9 @@
 
 # WebAtlas App
 
-[![demo](https://img.shields.io/badge/demos-view-blue)](https://github.com/haniffalab/vitessce-pipeline/blob/main/DEMOS.md)
+[![docs](https://img.shields.io/badge/Documentation-online-blue)](https://haniffalab.github.io/webatlas-pipeline)
+[![demo](https://img.shields.io/badge/Demos-view-blue)](https://haniffalab.github.io/webatlas-pipeline/demos.html)
+[![doi](https://zenodo.org/badge/DOI/10.5281/zenodo.7405818.svg)](https://doi.org/10.5281/zenodo.7405818)
 
 This React app builds on the [Vitessce](https://github.com/vitessce/vitessce) framework to create a web portal for spatial and single-cell experiment data. The app is designed to visualise data produced by the [webatlas-pipeline](https://github.com/haniffalab/webatlas-pipeline). 
 
@@ -36,5 +38,5 @@ Builds the app for production to the `build` folder.
 
 This app is automatically deployed. 
 
-[![demo](https://img.shields.io/badge/demo-latest-blue)](https://webatlas-app.cog.sanger.ac.uk/latest/index.html)
-[![demo](https://img.shields.io/badge/demo-dev-blue)](https://webatlas-app.cog.sanger.ac.uk/dev/index.html)
+[![demo](https://img.shields.io/badge/demo-latest-blue)](https://webatlas.cog.sanger.ac.uk/latest/index.html)
+[![demo](https://img.shields.io/badge/demo-dev-blue)](https://webatlas.cog.sanger.ac.uk/dev/index.html)
