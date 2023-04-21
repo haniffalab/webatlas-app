@@ -14,7 +14,7 @@
     "react-dom": "^16.14.0",
     "react-scripts": "5.0.0",
     "sass": "^1.55.0",
-    "vitessce": "^2.0.2",
+    "vitessce": "^2.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
