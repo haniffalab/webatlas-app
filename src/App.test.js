@@ -72,7 +72,7 @@ test("test scatterplot rendered", () => {
   expect(element).toBeInTheDocument();
 });
 
-// test("test Heatmap rendered", () => {
+// test("test heatmap rendered", () => {
 //   //TO BE CONTINUED: Heatmap component causes issue with Inline Worker
 //   window.URL.createObjectUrl = jest.fn();
 //   render(<Viewer config={heatmapLayout} />);
