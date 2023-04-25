@@ -1,110 +1,132 @@
 module.exports = {
-    "scatterplotLayout": {
-      "name": "ISS Human Brain Sample",
-      "version": "1.0.0",
-      "description": "",
-      "public": true,
-      "datasets": [
-        {
-          "uid": "iss-human-brain-advanced",
-          "name": "iss-human-brain-advanced",
-          "description": "In-situ Sequencing Human Brain Sample. Raster cell segmentation [bioformats2raw v0.2.6], with additional Vitessce components",
-          "files": [
-            {
-              "type": "raster",
-              "fileType": "raster.json",
-              "options": {
-                "renderLayers": [
-                  "Cells Segmentations"
-                ],
-                "schemaVersion": "0.0.2",
-                "images": [
-                  {
-                    "name": "Cells Segmentations",
-                    "url": "https://a04fcc815aa920b9c7e028bb79f7c2db29d0682c.cog.sanger.ac.uk/39bfafda600ff69122887bce04f4efb88f767caa/various_label_formats/out_opt_flow_registered_label_expanded_0.2.6",
-                    "type": "zarr",
-                    "metadata": {
-                      "isBitmask": true,
-                      "dimensions": [
-                        {
-                          "field": "channel",
-                          "type": "nominal",
-                          "values": [
-                            "Cells"
-                          ]
-                        },
-                        {
-                          "field": "y",
-                          "type": "quantitative",
-                          "values": null
-                        },
-                        {
-                          "field": "x",
-                          "type": "quantitative",
-                          "values": null
-                        }
-                      ],
-                      "isPyramid": true,
-                      "transform": {
-                        "translate": {
-                          "y": 0,
-                          "x": 0
-                        },
-                        "scale": 1
+  "scatterplotLayout": {
+    "version": "1.0.15",
+    "name": "Testing",
+    "description": "This config is used for testing",
+    "datasets": [
+      {
+        "uid": "iss",
+        "name": "iss",
+        "files": [
+          {
+            "type": "raster",
+            "fileType": "raster.json",
+            "options": {
+              "schemaVersion": "0.0.2",
+              "images": [
+                {
+                  "name": "hindlimb-iss-raw",
+                  "url": "https://hindlimb.cog.sanger.ac.uk/datasets/integrated-test/0.0.1/rotated/hindlimb-iss-rotated_90-raw.zarr",
+                  "type": "zarr",
+                  "metadata": {
+                    "isBitmask": false,
+                    "dimensions": [
+                      {
+                        "field": "t",
+                        "type": "quantitative",
+                        "values": null
+                      },
+                      {
+                        "field": "channel",
+                        "type": "nominal",
+                        "values": [
+                          "c01 dapi",
+                          "c01 1_ch",
+                          "c01 2_ch",
+                          "c01 3_ch",
+                          "c01 4_ch"
+                        ]
+                      },
+                      {
+                        "field": "y",
+                        "type": "quantitative",
+                        "values": null
+                      },
+                      {
+                        "field": "x",
+                        "type": "quantitative",
+                        "values": null
                       }
+                    ],
+                    "isPyramid": true,
+                    "transform": {
+                      "translate": {
+                        "y": 0,
+                        "x": 0
+                      },
+                      "scale": 1
                     }
                   }
-                  ]
                 }
-              },
+              ]
+            }
+          },
+          {
+            "fileType": "obsFeatureMatrix.anndata.zarr",
+            "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
+            "options": {
+              "path": "X"
+            }
+          },
+          {
+            "fileType": "obsFeatureMatrix.anndata.zarr",
+            "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
+            "options": {
+              "path": "X",
+              "featureFilterPath": "var/is_gene"
+            }
+          },
+          {
+            "fileType": "obsFeatureMatrix.anndata.zarr",
+            "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
+            "options": {
+              "path": "X",
+              "featureFilterPath": "var/is_celltype"
+            }
+          },
+          {
+            "fileType": "obsLocations.anndata.zarr",
+            "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
+            "options": {
+              "path": "obsm/spatial"
+            }
+          },
+          {
+            "fileType": "obsSets.anndata.zarr",
+            "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
+            "options": [
               {
-                "url": "https://storage.googleapis.com/webatlas-vitessce-data/scale_test/3/sample.cells.json",
-                "type": "cells",
-                "fileType": "cells.json"
-              },
-              {
-                "url": "https://storage.googleapis.com/webatlas-vitessce-data/scale_test/3/sample.cell-sets.json",
-                "type": "cell-sets",
-                "fileType": "cell-sets.json"
-              },
-              {
-                "url": "https://storage.googleapis.com/webatlas-vitessce-data/scale_test/3/sample.clusters.json",
-                "type": "expression-matrix",
-                "fileType": "clusters.json"
+                "name": "CellType",
+                "path": "obs/celltype"
               }
             ]
           }
-        ],
-        "initStrategy": "auto",
-        "coordinationSpace": {
-          "embeddingType": {
-            "PCA": "X_pca",
-            "UMAP": "X_umap"
-          },
-          "embeddingZoom": {
-            "PCA": 0,
-            "UMAP": 0.75
-          },
-          "spatialZoom": {
-            "A": -5.5
-          },
-          "spatialTargetX": {
-            "A": 16000
-          },
-          "spatialTargetY": {
-            "A": 20000
+        ]
+      }
+    ],
+    "initStrategy": "auto",
+    "coordinationSpace": {
+      "dataset": {
+        "A": "iss"
+      },
+      "embeddingType": {
+        "UMAP": "X_umap"
+      },
+    },
+    "layout": [
+      {
+        "component": "scatterplot",
+        "coordinationScopes": {
+          "dataset": "A",
+          "coordinationScopes": {
+            "embeddingType": "UMAP",
           }
         },
-      "layout": [{
-          "component": "scatterplot",
-          "x": 6,
-          "y": 0,
-          "w": 3,
-          "h": 4,
-          "coordinationScopes":{
-              "embeddingType": "PCA",
-              "embeddingZoom": "PCA"
-          }
-      }]
-    }
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 12
+      }
+    ]
+  }
 }

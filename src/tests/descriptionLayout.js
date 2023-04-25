@@ -1,8 +1,8 @@
 module.exports = {
-  "statusLayout": {
+  "descriptionLayout": {
     "version": "1.0.15",
-    "name": "Lower limb - scRNAseq & ISS",
-    "description": "",
+    "name": "Testing",
+    "description": "This config is used for testing",
     "datasets": [
       {
         "uid": "iss",
@@ -11,15 +11,7 @@ module.exports = {
           {
             "type": "raster",
             "fileType": "raster.json",
-            "coordinationValues": {
-              "obsType": "cell",
-              "featureType": "combined"
-            },
             "options": {
-              "renderLayers": [
-                "hindlimb-iss-raw",
-                "hindlimb-iss-label"
-              ],
               "schemaVersion": "0.0.2",
               "images": [
                 {
@@ -65,46 +57,6 @@ module.exports = {
                       "scale": 1
                     }
                   }
-                },
-                {
-                  "name": "hindlimb-iss-label",
-                  "url": "https://hindlimb.cog.sanger.ac.uk/datasets/integrated-test/0.0.1/rotated/hindlimb-iss-rotated_90-label.zarr",
-                  "type": "zarr",
-                  "metadata": {
-                    "isBitmask": true,
-                    "dimensions": [
-                      {
-                        "field": "t",
-                        "type": "quantitative",
-                        "values": null
-                      },
-                      {
-                        "field": "channel",
-                        "type": "nominal",
-                        "values": [
-                          "Labels"
-                        ]
-                      },
-                      {
-                        "field": "y",
-                        "type": "quantitative",
-                        "values": null
-                      },
-                      {
-                        "field": "x",
-                        "type": "quantitative",
-                        "values": null
-                      }
-                    ],
-                    "isPyramid": true,
-                    "transform": {
-                      "translate": {
-                        "y": 0,
-                        "x": 0
-                      },
-                      "scale": 1
-                    }
-                  }
                 }
               ]
             }
@@ -112,11 +64,6 @@ module.exports = {
           {
             "fileType": "obsFeatureMatrix.anndata.zarr",
             "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
-            "coordinationValues": {
-              "obsType": "cell",
-              "featureType": "combined",
-              "featureValueType": "expression"
-            },
             "options": {
               "path": "X"
             }
@@ -124,11 +71,6 @@ module.exports = {
           {
             "fileType": "obsFeatureMatrix.anndata.zarr",
             "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
-            "coordinationValues": {
-              "obsType": "cell",
-              "featureType": "gene",
-              "featureValueType": "expression"
-            },
             "options": {
               "path": "X",
               "featureFilterPath": "var/is_gene"
@@ -137,11 +79,6 @@ module.exports = {
           {
             "fileType": "obsFeatureMatrix.anndata.zarr",
             "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
-            "coordinationValues": {
-              "obsType": "cell",
-              "featureType": "celltype",
-              "featureValueType": "abundance"
-            },
             "options": {
               "path": "X",
               "featureFilterPath": "var/is_celltype"
@@ -150,9 +87,6 @@ module.exports = {
           {
             "fileType": "obsLocations.anndata.zarr",
             "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
-            "coordinationValues": {
-              "obsType": "cell"
-            },
             "options": {
               "path": "obsm/spatial"
             }
@@ -160,26 +94,32 @@ module.exports = {
           {
             "fileType": "obsSets.anndata.zarr",
             "url": "https://hindlimb.cog.sanger.ac.uk/datasets/20230412_multimodal/integrated/0.0.1/hindlimb-iss-integrated-rotated_90-anndata.zarr",
-            "coordinationValues": {
-              "obsType": "cell"
-            },
-            "options": [{
-              "name": "CellType",
-              "path": "obs/celltype"
-            }]
+            "options": [
+              {
+                "name": "CellType",
+                "path": "obs/celltype"
+              }
+            ]
           }
         ]
       }
     ],
     "initStrategy": "auto",
-    "coordinationSpace": {},
+    "coordinationSpace": {
+      "dataset": {
+        "A": "iss"
+      }
+    },
     "layout": [
       {
-        "component": "status",
+        "component": "description",
+        "coordinationScopes": {
+          "dataset": "A"
+        },
         "x": 0,
-        "y": 9,
-        "w": 2,
-        "h": 2
+        "y": 0,
+        "w": 12,
+        "h": 12
       }
     ]
   }
