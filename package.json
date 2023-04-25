@@ -1,6 +1,6 @@
 {
-  "name": "vitessce-app",
-  "version": "0.1.2",
+  "name": "webatlas-app",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@sentry/react": "^7.9.0",
