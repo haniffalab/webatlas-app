@@ -34,11 +34,11 @@ export default function Header(props) {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <ButtonGroup aria-label="Version" className="pe-2">
-              <Button variant="secondary" size="sm" disabled>vitessce-app</Button>
-              <Button variant="primary" size="sm" href={"https://github.com/haniffalab/vitessce-app/releases/tag/v" + process.env.REACT_APP_SEMANTIC_VERSION}>{process.env.REACT_APP_SEMANTIC_VERSION}</Button>
+              <Button variant="secondary" size="sm" disabled>webatlas-app</Button>
+              <Button variant="primary" size="sm" href={"https://github.com/haniffalab/webatlas-app/releases/tag/v" + process.env.REACT_APP_SEMANTIC_VERSION}>{process.env.REACT_APP_SEMANTIC_VERSION}</Button>
             </ButtonGroup>
             <ButtonGroup aria-label="Support">
-              <Button variant="secondary" size="sm" href="https://github.com/haniffalab/vitessce-app">Docs</Button>
+              <Button variant="secondary" size="sm" href="https://haniffalab.github.io/webatlas-pipeline">Docs</Button>
             </ButtonGroup>
           </Navbar.Collapse>
         </Container>

@@ -152,6 +152,6 @@ test("test passing invalid json file", async () => {
 //   window.location = { search: '?config=http://localhost:3000/config/tests/no_version.json' };
 //   render(<App />);
 //   await new Promise((r) => setTimeout(r, 2000));
-//   const element = screen.getByText(/vitessce-app/i);
+//   const element = screen.getByText(/webatlas-app/i);
 //   expect(element).toBeInTheDocument();
 // });
