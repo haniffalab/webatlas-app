@@ -1,26 +1,26 @@
 {
-  "name": "vitessce-app",
-  "version": "0.1.2",
+  "name": "webatlas-app",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@sentry/react": "^7.9.0",
-    "@sentry/tracing": "^7.9.0",
+    "@sentry/react": "^7.49.0",
+    "@sentry/tracing": "^7.49.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^5.2.3",
     "react": "^16.14.0",
-    "react-bootstrap": "^2.5.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^16.14.0",
     "react-scripts": "5.0.0",
-    "sass": "^1.55.0",
+    "sass": "^1.62.0",
     "vitessce": "^2.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts start --max_old_space_size=4096",
-    "build": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts build --max_old_space_size=4096",
-    "test": "react-scripts test --max_old_space_size=4096",
+    "start": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 start",
+    "build": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 build",
+    "test": "react-scripts --max_old_space_size=4096 test --transformIgnorePatterns 'node_modules/(?!vitessce)'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +43,6 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "jest-canvas-mock": "^2.4.0"
+    "jest-canvas-mock": "^2.5.0"
   }
 }
