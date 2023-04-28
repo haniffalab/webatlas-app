@@ -1,6 +1,6 @@
 {
-  "short_name": "vitessce-app",
-  "name": "Vitessce App",
+  "short_name": "webatlas-app",
+  "name": "WebAtlas App",
   "icons": [
     {
       "src": "favicon.ico",
