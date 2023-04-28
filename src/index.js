@@ -19,7 +19,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const themeParam = urlParams.get('theme');
 const themes = ["dark", "light"];
 const theme = themes.includes(themeParam) ? themeParam : "dark";
-console.log(theme)
 const ThemeLight = React.lazy(() => import('./themes/Light'));
 const ThemeDark = React.lazy(() => import('./themes/Dark'));
 const ThemeSelector = ({ children }) => {
