@@ -18,9 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts start --max_old_space_size=4096",
-    "build": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts build --max_old_space_size=4096",
-    "test": "react-scripts test --max_old_space_size=4096 --transformIgnorePatterns 'node_modules/(?!vitessce)'",
+    "start": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 start",
+    "build": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 build",
+    "test": "react-scripts --max_old_space_size=4096 test --transformIgnorePatterns 'node_modules/(?!vitessce)'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
