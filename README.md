@@ -6,7 +6,7 @@
 # WebAtlas App
 
 [![docs](https://img.shields.io/badge/Documentation-online-blue)](https://haniffalab.github.io/webatlas-pipeline)
-[![demo](https://img.shields.io/badge/Demos-view-blue)](https://haniffalab.github.io/webatlas-pipeline/demos.html)
+[![demo](https://img.shields.io/badge/Demos-view-blue)](https://cellatlas.io/webatlas)
 [![doi](https://zenodo.org/badge/DOI/10.5281/zenodo.7405818.svg)](https://doi.org/10.5281/zenodo.7405818)
 
 This React app builds on the [Vitessce](https://github.com/vitessce/vitessce) framework to create a web portal for spatial and single-cell experiment data. The app is designed to visualise data produced by the [webatlas-pipeline](https://github.com/haniffalab/webatlas-pipeline). 
