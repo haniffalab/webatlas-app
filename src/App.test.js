@@ -36,21 +36,24 @@ test("renders loader", () => {
 test("test viewer without config", () => {
   window.URL.createObjectURL = jest.fn();
   render(<Viewer />);
-  const element = screen.getByText(/The dataset configuration could not be found/);
+  //const element = screen.getByText(/The dataset configuration could not be found/);
+  const element = screen.getByText(/Config version was not recognized/);
   expect(element).toBeInTheDocument();
 });
 
 test("test viewer with wrong version in config", () => {
   window.URL.createObjectURL = jest.fn();
   render(<Viewer config={{ version: "This.Is.An.Invalid.Version" }} />);
-  const element = screen.getByText(/Unknown config version/);
+  //const element = screen.getByText(/Unknown config version/);
+  const element = screen.getByText(/Config version was not recognized/);
   expect(element).toBeInTheDocument();
 });
 
 test("test viwer with wrong initStrategy in config", () => {
   window.URL.createObjectURL = jest.fn();
   render(<Viewer config={incorrectInitStrategy} />);
-  const element = screen.getByText(/should be equal to one of the allowed values/i);
+  //const element = screen.getByText(/should be equal to one of the allowed values/i);
+  const element = screen.getByText(/invalid init strategy/);
   expect(element).toBeInTheDocument();
 });
 

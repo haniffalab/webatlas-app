@@ -1,6 +1,6 @@
 {
   "name": "webatlas-app",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "dependencies": {
     "@sentry/react": "^7.9.0",
@@ -14,7 +14,7 @@
     "react-dom": "^16.14.0",
     "react-scripts": "5.0.0",
     "sass": "^1.55.0",
-    "vitessce": "^2.0.3",
+    "vitessce": "^3.2.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
