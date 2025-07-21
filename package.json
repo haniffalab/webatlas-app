@@ -5,16 +5,16 @@
   "dependencies": {
     "@sentry/react": "^7.9.0",
     "@sentry/tracing": "^7.9.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^12.1.5",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.0.0",
     "bootstrap": "^5.2.0",
-    "react": "^16.14.0",
+    "react": "^18.3.1",
     "react-bootstrap": "^2.5.0",
-    "react-dom": "^16.14.0",
+    "react-dom": "^18.3.1",
     "react-scripts": "5.0.0",
     "sass": "^1.55.0",
-    "vitessce": "^2.0.3",
+    "vitessce": "^3.5.12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
