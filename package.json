@@ -2,26 +2,31 @@
   "name": "webatlas-app",
   "version": "0.2.2",
   "private": true,
-  "dependencies": {
-    "@sentry/react": "^7.9.0",
-    "@sentry/tracing": "^7.9.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^12.1.5",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.2.0",
-    "react": "^16.14.0",
-    "react-bootstrap": "^2.5.0",
-    "react-dom": "^16.14.0",
-    "react-scripts": "5.0.0",
-    "sass": "^1.55.0",
-    "vitessce": "^3.2.2",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 start",
     "build": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 build",
     "test": "cross-env REACT_APP_SEMANTIC_VERSION=$npm_package_version react-scripts --max_old_space_size=4096 test --transformIgnorePatterns 'node_modules/(?!vitessce)'",
     "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@sentry/react": "^7.9.0",
+    "@sentry/tracing": "^7.9.0",
+    "bootstrap": "^5.2.0",
+    "react": "^16.14.0",
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "5.0.0",
+    "vitessce": "~3.2.2",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "ajv": "^8.17.1",
+    "cross-env": "^7.0.3",
+    "jest-canvas-mock": "^2.4.0",
+    "sass": "^1.55.0"
   },
   "eslintConfig": {
     "extends": [
@@ -40,9 +45,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3",
-    "jest-canvas-mock": "^2.4.0"
   }
 }
